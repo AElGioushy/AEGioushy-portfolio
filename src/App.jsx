@@ -8,17 +8,39 @@ const certifications = [
   "Governance & Digital Transformation – Advanced Level",
 ];
 
-const skills = [
-  "Governance",
-  "Digital Transformation",
-  "Artificial Intelligence",
-  "International Relations",
-  "Sustainability",
-  "Strategic Leadership",
-  "Logistics",
-  "Community Development",
-  "Public Communication",
-  "Research & Analysis",
+const visionCards = [
+  {
+    title: "Governance",
+    description: "Focused on governance awareness, transparency, digital transformation frameworks, and institutional development.",
+  },
+  {
+    title: "Legal Tech",
+    description: "Exploring the future of legal systems through AI, automation, and digital legal innovation.",
+  },
+  {
+    title: "AI & Sustainability",
+    description: "Combining artificial intelligence and sustainability initiatives to support future-ready communities.",
+  },
+  {
+    title: "Digital Society",
+    description: "Advocating for digital literacy, responsible innovation, and inclusive digital communities.",
+  },
+];
+
+const timeline = [
+  "Legal Studies & International Relations — Pharos University",
+  "M.Sc. International Transactions & Logistics — AASTMT",
+  "Customer Service Experience — Amazon UK, Emaar Dubai, Dubai Mall, Altice USA",
+  "Sales Executive at ECC Solutions",
+  "Governance & Digital Transformation Activities",
+  "AI & Sustainability Initiatives",
+];
+
+const languages = [
+  "Arabic (Native)",
+  "English (Professional)",
+  "French (Learning)",
+  "German (Learning)",
 ];
 
 const App = () => {
@@ -28,59 +50,49 @@ const App = () => {
         <div className="overlay"></div>
         <div className="hero-content">
           <p className="hero-tag">Ahmed ElGioushy</p>
-          <h1>Governance, Innovation & Sustainable Leadership</h1>
+          <h1>Legal & Governance Professional</h1>
+          <div className="typing-text">
+            Governance & Digital Transformation Specialist
+          </div>
+
           <p className="hero-summary">
-            Ahmed ElGioushy is a multidisciplinary professional with academic and practical interests in Governance, Digital Transformation, Artificial Intelligence, Sustainability, International Relations, and Logistics.
+            Academic researcher and multidisciplinary professional focused on governance, legal technology, sustainability, artificial intelligence, and digital transformation.
           </p>
-          <p className="hero-subtitle">
-            Passionate about leadership, innovation, youth empowerment, and creating meaningful community impact through technology and sustainable development initiatives.
-          </p>
+
+          <div className="hero-buttons">
+            <a className="hero-btn" href="#">Download Academic CV</a>
+          </div>
         </div>
       </section>
 
       <section className="content-section">
         <div className="section-header">
-          <h2>About Me</h2>
+          <h2>Professional Vision</h2>
           <p>
-            Academic and community-focused professional with a background in Legal Studies, International Relations, and International Transactions & Logistics. Dedicated to supporting governance awareness, digital transformation initiatives, sustainability culture, and youth engagement across Egypt.
+            Building a modern professional identity centered around governance, digital society, legal technology, sustainability, and innovation.
           </p>
         </div>
 
         <div className="grid-layout">
-          <div className="glass-card">
-            <h3>Professional Development</h3>
-            <p>
-              Continuously developing expertise in governance frameworks, emerging technologies, artificial intelligence, sustainability strategy, and digital transformation methodologies through advanced learning programs and community participation.
-            </p>
-          </div>
-
-          <div className="glass-card">
-            <h3>Organizations & Memberships</h3>
-            <p>
-              Official Member at Engineers for Sustainable Egypt Foundation.
-            </p>
-          </div>
-
-          <div className="glass-card">
-            <h3>Community Engagement</h3>
-            <p>
-              Active participant in graduation events, professional activities, and development initiatives related to Cohort 5, Cohort 6, and Cohort 7 with a focus on collaboration, learning, and leadership growth.
-            </p>
-          </div>
+          {visionCards.map((card, index) => (
+            <div className="glass-card glow-card" key={index}>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="content-section dark-section">
         <div className="section-header">
-          <h2>Certifications</h2>
-          <p>Professional programs focused on AI, governance, innovation, and digital transformation.</p>
+          <h2>Academic & Professional Journey</h2>
         </div>
 
-        <div className="grid-layout">
-          {certifications.map((item, index) => (
-            <div className="certificate-card" key={index}>
-              <span className="certificate-badge">Certified</span>
-              <h3>{item}</h3>
+        <div className="timeline-wrapper">
+          {timeline.map((item, index) => (
+            <div className="timeline-item" key={index}>
+              <div className="timeline-dot"></div>
+              <p>{item}</p>
             </div>
           ))}
         </div>
@@ -88,53 +100,53 @@ const App = () => {
 
       <section className="content-section">
         <div className="section-header">
-          <h2>Volunteer Work</h2>
-        </div>
-
-        <div className="grid-layout">
-          <div className="glass-card">
-            <h3>Community Service</h3>
-            <p>
-              Contributed to volunteer activities supporting sustainability awareness, youth participation, and positive social impact initiatives.
-            </p>
-          </div>
-
-          <div className="glass-card">
-            <h3>Digital Awareness Initiatives</h3>
-            <p>
-              Participated in awareness activities promoting digital literacy, responsible technology use, governance culture, and innovation-driven community development.
-            </p>
-          </div>
-
-          <div className="glass-card">
-            <h3>Team Collaboration</h3>
-            <p>
-              Worked within collaborative environments focused on leadership, teamwork, project coordination, and supporting sustainable community engagement programs.
-            </p>
-          </div>
+          <h2>Current Research Focus</h2>
+          <p>
+            International Commercial Arbitration & Digital Governance.
+            Researching the relationship between legal systems, digital governance frameworks, and emerging technologies in modern institutions.
+          </p>
         </div>
       </section>
 
       <section className="content-section dark-section">
         <div className="section-header">
-          <h2>Skills</h2>
+          <h2>Languages</h2>
         </div>
 
         <div className="skills-wrapper">
-          {skills.map((skill, index) => (
-            <span key={index} className="skill-pill">{skill}</span>
+          {languages.map((language, index) => (
+            <span key={index} className="skill-pill">{language}</span>
           ))}
         </div>
       </section>
 
-      <section className="content-section leadership-section">
+      <section className="content-section">
         <div className="section-header">
-          <h2>Leadership & Sustainability</h2>
-          <p>
-            Focused on combining governance principles, sustainable development goals, innovation, and digital transformation to support impactful initiatives that empower communities and encourage future-ready leadership.
-          </p>
+          <h2>Certifications</h2>
+        </div>
+
+        <div className="grid-layout">
+          {certifications.map((item, index) => (
+            <div className="certificate-card glow-card" key={index}>
+              <span className="certificate-badge">Certified</span>
+              <h3>{item}</h3>
+            </div>
+          ))}
         </div>
       </section>
+
+      <footer className="footer-section">
+        <h3>Ahmed ElGioushy</h3>
+        <p>AI & Sustainability Advocate | Academic Researcher | Community-Oriented Leader</p>
+
+        <div className="footer-links">
+          <a href="https://linkedin.com/in/aelgioushy">LinkedIn</a>
+          <a href="https://github.com/AElGioushy">GitHub</a>
+          <a href="mailto:aelgioushy@example.com">Email</a>
+        </div>
+
+        <span>© 2026 Ahmed ElGioushy. All rights reserved.</span>
+      </footer>
     </div>
   );
 };

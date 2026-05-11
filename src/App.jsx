@@ -8,39 +8,22 @@ const certifications = [
   "Governance & Digital Transformation – Advanced Level",
 ];
 
-const visionCards = [
-  {
-    title: "Governance",
-    description: "Focused on governance awareness, transparency, digital transformation frameworks, and institutional development.",
-  },
-  {
-    title: "Legal Tech",
-    description: "Exploring the future of legal systems through AI, automation, and digital legal innovation.",
-  },
-  {
-    title: "AI & Sustainability",
-    description: "Combining artificial intelligence and sustainability initiatives to support future-ready communities.",
-  },
-  {
-    title: "Digital Society",
-    description: "Advocating for digital literacy, responsible innovation, and inclusive digital communities.",
-  },
+const researchTags = [
+  "Digital Governance",
+  "Legal Informatics",
+  "AI Ethics",
+  "Smart Cities",
+  "Cyber Governance",
+  "ESG",
+  "Sustainable Development",
+  "International Law",
 ];
 
-const timeline = [
-  "Legal Studies & International Relations — Pharos University",
-  "M.Sc. International Transactions & Logistics — AASTMT",
-  "Customer Service Experience — Amazon UK, Emaar Dubai, Dubai Mall, Altice USA",
-  "Sales Executive at ECC Solutions",
-  "Governance & Digital Transformation Activities",
-  "AI & Sustainability Initiatives",
-];
-
-const languages = [
-  "Arabic (Native)",
-  "English (Professional)",
-  "French (Learning)",
-  "German (Learning)",
+const stats = [
+  "5+ Professional Programs",
+  "4 Languages",
+  "3+ Years Experience",
+  "Governance & AI Researcher",
 ];
 
 const App = () => {
@@ -48,15 +31,18 @@ const App = () => {
     <div className="portfolio-app">
       <section className="hero-section">
         <div className="overlay"></div>
+
         <div className="hero-content">
           <p className="hero-tag">Ahmed ElGioushy</p>
-          <h1>Legal & Governance Professional</h1>
+
+          <h1>Governance & Digital Transformation Researcher</h1>
+
           <div className="typing-text">
-            Governance & Digital Transformation Specialist
+            Legal Tech & AI Advocate
           </div>
 
           <p className="hero-summary">
-            Academic researcher and multidisciplinary professional focused on governance, legal technology, sustainability, artificial intelligence, and digital transformation.
+            Building bridges between governance, technology, sustainability, and society through academic research, innovation, and community-oriented leadership.
           </p>
 
           <div className="hero-buttons">
@@ -65,79 +51,112 @@ const App = () => {
         </div>
       </section>
 
-      <section className="content-section">
-        <div className="section-header">
-          <h2>Professional Vision</h2>
-          <p>
-            Building a modern professional identity centered around governance, digital society, legal technology, sustainability, and innovation.
-          </p>
-        </div>
-
-        <div className="grid-layout">
-          {visionCards.map((card, index) => (
-            <div className="glass-card glow-card" key={index}>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="content-section dark-section">
-        <div className="section-header">
-          <h2>Academic & Professional Journey</h2>
-        </div>
-
-        <div className="timeline-wrapper">
-          {timeline.map((item, index) => (
-            <div className="timeline-item" key={index}>
-              <div className="timeline-dot"></div>
-              <p>{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="content-section">
-        <div className="section-header">
-          <h2>Current Research Focus</h2>
-          <p>
-            International Commercial Arbitration & Digital Governance.
-            Researching the relationship between legal systems, digital governance frameworks, and emerging technologies in modern institutions.
-          </p>
-        </div>
-      </section>
-
-      <section className="content-section dark-section">
-        <div className="section-header">
-          <h2>Languages</h2>
-        </div>
-
-        <div className="skills-wrapper">
-          {languages.map((language, index) => (
-            <span key={index} className="skill-pill">{language}</span>
-          ))}
-        </div>
-      </section>
-
-      <section className="content-section">
-        <div className="section-header">
-          <h2>Certifications</h2>
-        </div>
-
-        <div className="grid-layout">
-          {certifications.map((item, index) => (
-            <div className="certificate-card glow-card" key={index}>
-              <span className="certificate-badge">Certified</span>
+      <section className="content-section stats-section">
+        <div className="stats-grid">
+          {stats.map((item, index) => (
+            <div className="stats-card glow-card" key={index}>
               <h3>{item}</h3>
             </div>
           ))}
         </div>
       </section>
 
+      <section className="content-section">
+        <div className="section-header">
+          <h2>Current Research Interests</h2>
+          <p>
+            Exploring the intersection between law, governance, sustainability, artificial intelligence, and digital transformation.
+          </p>
+        </div>
+
+        <div className="skills-wrapper">
+          {researchTags.map((tag, index) => (
+            <span className="skill-pill" key={index}>{tag}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-section dark-section">
+        <div className="section-header">
+          <h2>Research & Publications</h2>
+          <p>
+            Academic and professional exploration of governance systems, AI ethics, legal technology, sustainability frameworks, and digital governance transformation.
+          </p>
+        </div>
+
+        <div className="grid-layout">
+          <div className="glass-card glow-card">
+            <h3>AI & Legal Transformation</h3>
+            <p>
+              Exploring how artificial intelligence is reshaping legal systems, legal accessibility, and future justice frameworks.
+            </p>
+          </div>
+
+          <div className="glass-card glow-card">
+            <h3>Digital Governance in Egypt</h3>
+            <p>
+              Researching governance modernization and digital transformation strategies within public institutions.
+            </p>
+          </div>
+
+          <div className="glass-card glow-card">
+            <h3>Sustainable Logistics Frameworks</h3>
+            <p>
+              Examining sustainable logistics systems and future-ready transportation models.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="content-section">
+        <div className="section-header">
+          <h2>Speaking & Conferences</h2>
+        </div>
+
+        <div className="timeline-wrapper">
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <p>Cairo ICT Participation & Networking Activities</p>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <p>Governance & Digital Transformation Programs</p>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <p>Community Leadership & Sustainability Events</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="content-section dark-section">
+        <div className="section-header">
+          <h2>What I’m Working On</h2>
+        </div>
+
+        <div className="grid-layout">
+          <div className="glass-card glow-card">
+            <h3>AI in Legal Systems</h3>
+          </div>
+
+          <div className="glass-card glow-card">
+            <h3>Digital Governance Models</h3>
+          </div>
+
+          <div className="glass-card glow-card">
+            <h3>Smart Community Solutions</h3>
+          </div>
+        </div>
+      </section>
+
       <footer className="footer-section">
         <h3>Ahmed ElGioushy</h3>
-        <p>AI & Sustainability Advocate | Academic Researcher | Community-Oriented Leader</p>
+
+        <p>
+          Governance • Legal Tech • AI • Sustainability • Digital Society
+        </p>
 
         <div className="footer-links">
           <a href="https://linkedin.com/in/aelgioushy">LinkedIn</a>
@@ -145,7 +164,7 @@ const App = () => {
           <a href="mailto:aelgioushy@example.com">Email</a>
         </div>
 
-        <span>© 2026 Ahmed ElGioushy. All rights reserved.</span>
+        <span>© 2026 Ahmed ElGioushy — Academic & Professional Portfolio</span>
       </footer>
     </div>
   );

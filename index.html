@@ -1,79 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmed ElGioushy | Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0d1117;
-            color: #fff;
-        }
-        header {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 40px;
-            color: #58a6ff;
-        }
-        .section {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            color: #58a6ff;
-        }
-        .card {
-            background: #161b22;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ahmed ElGioushy | Professional Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(180deg, #07111f 0%, #0d1b2d 100%);
+color: white;
+line-height: 1.8;
+overflow-x: hidden;
+}
+
+.hero {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 80px 8%;
+background:
+radial-gradient(circle at top right, rgba(88,166,255,0.25), transparent 30%),
+radial-gradient(circle at bottom left, rgba(0,255,170,0.12), transparent 25%);
+}
+
+.hero-content {
+max-width: 950px;
+animation: fadeUp 1s ease;
+}
+
+.badge {
+display: inline-block;
+padding: 10px 18px;
+border-radius: 999px;
+background: rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.1);
+color: #8de1ff;
+font-weight: 600;
+margin-bottom: 24px;
+}
+
+h1 {
+font-size: 72px;
+line-height: 1;
+margin-bottom: 24px;
+font-weight: 800;
+}
+
+.hero-summary {
+font-size: 22px;
+color: #d9e7f7;
+margin-bottom: 20px;
+}
+
+.hero-subtitle {
+font-size: 18px;
+color: #9fb3c8;
+}
+
+.section {
+padding: 90px 8%;
+}
+
+.section-title {
+font-size: 44px;
+margin-bottom: 20px;
+color: #58a6ff;
+}
+
+.section-description {
+max-width: 900px;
+font-size: 18px;
+color: #c8d5e5;
+margin-bottom: 40px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+}
+
+.card {
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.08);
+padding: 30px;
+border-radius: 24px;
+backdrop-filter: blur(10px);
+transition: 0.4s ease;
+}
+
+.card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+border-color: rgba(88,166,255,0.4);
+}
+
+.card h3 {
+margin-bottom: 15px;
+font-size: 24px;
+}
+
+.card p {
+color: #d5dfeb;
+}
+
+.cert-badge {
+display: inline-block;
+padding: 8px 14px;
+background: rgba(0,255,170,0.15);
+color: #9cffdc;
+border-radius: 999px;
+font-size: 13px;
+font-weight: 700;
+margin-bottom: 15px;
+}
+
+.skills {
+display: flex;
+flex-wrap: wrap;
+gap: 14px;
+}
+
+.skill {
+padding: 12px 18px;
+border-radius: 999px;
+background: rgba(88,166,255,0.12);
+border: 1px solid rgba(88,166,255,0.2);
+font-weight: 600;
+}
+
+footer {
+text-align: center;
+padding: 40px 20px;
+color: #8ea2b8;
+}
+
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(40px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@media(max-width: 768px) {
+h1 {
+font-size: 46px;
+}
+
+.section-title {
+font-size: 34px;
+}
+
+.hero-summary {
+font-size: 18px;
+}
+}
+</style>
 </head>
-
 <body>
-    <header>
-        <h1>Ahmed ElGioushy</h1>
-        <p>Sales Executive | Cybersecurity Learner | AI Enthusiast</p>
-    </header>
 
-    <section class="section">
-        <h2>About Me</h2>
-        <div class="card">
-            <p>
-                I’m Ahmed ElGioushy from Egypt. I hold a degree in Legal Studies and 
-                International Relations and a Master's in International Transactions 
-                & Logistics. Currently working as a Sales Executive at Egypt Cyber Center 
-                while expanding my skills in Cybersecurity and AI development.
-            </p>
-        </div>
+<section class="hero">
+<div class="hero-content">
+<div class="badge">Ahmed ElGioushy</div>
+<h1>Governance, Innovation & Sustainable Leadership</h1>
+<p class="hero-summary">
+Ahmed ElGioushy is a multidisciplinary professional with academic and practical interests in Governance, Digital Transformation, Artificial Intelligence, Sustainability, International Relations, and Logistics.
+</p>
+<p class="hero-subtitle">
+Passionate about leadership, innovation, youth empowerment, and creating meaningful community impact through technology and sustainable development initiatives.
+</p>
+</div>
+</section>
 
-        <h2>Experience</h2>
-        <div class="card">
-            <p>Sales Executive – Egypt Cyber Center Solutions</p>
-            <p>Customer Service – Amazon UK, Emaar Dubai, Dubai Mall</p>
-            <p>Billing & Technical Support – Altice USA</p>
-        </div>
+<section class="section">
+<h2 class="section-title">About Me</h2>
+<p class="section-description">
+Academic and community-focused professional with a background in Legal Studies, International Relations, and International Transactions & Logistics. Dedicated to supporting governance awareness, digital transformation initiatives, sustainability culture, and youth engagement across Egypt.
+</p>
 
-        <h2>Projects</h2>
-        <div class="card">
-            <p>• Cybersecurity Home Lab (Hyper-V)</p>
-            <p>• AI Assistant Personal API</p>
-            <p>• Portfolio Website (This Repository)</p>
-        </div>
+<div class="grid">
+<div class="card">
+<h3>Professional Development</h3>
+<p>
+Continuously developing expertise in governance frameworks, artificial intelligence, sustainability strategy, emerging technologies, and digital transformation methodologies.
+</p>
+</div>
 
-        <h2>Contact</h2>
-        <div class="card">
-            <p>Email: your-email@example.com</p>
-            <p>GitHub: github.com/AEGioushy</p>
-        </div>
-    </section>
+<div class="card">
+<h3>Organizations & Memberships</h3>
+<p>
+Official Member at Engineers for Sustainable Egypt Foundation.
+</p>
+</div>
+
+<div class="card">
+<h3>Community Engagement</h3>
+<p>
+Active participant in graduation events and activities related to Cohort 5, Cohort 6, and Cohort 7 with a focus on leadership, collaboration, and professional development.
+</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Certifications</h2>
+<div class="grid">
+<div class="card">
+<div class="cert-badge">Certified</div>
+<h3>AI Ambassadors Program – Basic Level</h3>
+</div>
+
+<div class="card">
+<div class="cert-badge">Certified</div>
+<h3>AI Ambassadors Program – Advanced Level</h3>
+</div>
+
+<div class="card">
+<div class="cert-badge">Certified</div>
+<h3>Governance & Digital Transformation – Basic Level</h3>
+</div>
+
+<div class="card">
+<div class="cert-badge">Certified</div>
+<h3>Governance & Digital Transformation – Advanced Level</h3>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Volunteer Work</h2>
+<div class="grid">
+<div class="card">
+<h3>Community Service</h3>
+<p>
+Contributed to volunteer initiatives focused on sustainability awareness, youth participation, and positive social impact.
+</p>
+</div>
+
+<div class="card">
+<h3>Digital Awareness Initiatives</h3>
+<p>
+Participated in digital awareness activities promoting responsible technology use, innovation culture, and digital transformation concepts.
+</p>
+</div>
+
+<div class="card">
+<h3>Team Collaboration</h3>
+<p>
+Worked in collaborative environments supporting leadership development, teamwork, project coordination, and community engagement.
+</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Skills</h2>
+<div class="skills">
+<div class="skill">Governance</div>
+<div class="skill">Digital Transformation</div>
+<div class="skill">Artificial Intelligence</div>
+<div class="skill">International Relations</div>
+<div class="skill">Sustainability</div>
+<div class="skill">Strategic Leadership</div>
+<div class="skill">Logistics</div>
+<div class="skill">Community Development</div>
+<div class="skill">Research & Analysis</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Leadership & Sustainability</h2>
+<p class="section-description">
+Focused on combining governance principles, sustainable development goals, innovation, and digital transformation to support impactful initiatives that empower communities and encourage future-ready leadership.
+</p>
+</section>
+
+<footer>
+Ahmed ElGioushy • Professional Portfolio
+</footer>
+
 </body>
 </html>

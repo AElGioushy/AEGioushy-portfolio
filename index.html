@@ -7,111 +7,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#07111f;color:#fff;overflow-x:hidden;line-height:1.8}
-html{scroll-behavior:smooth}
-nav{position:fixed;top:0;width:100%;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,17,31,.85);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.06)}
-nav h3{color:#8de1ff}
-nav a{color:#d8e2ee;text-decoration:none;margin-left:20px;font-size:14px;transition:.3s}
-nav a:hover{color:#58a6ff}
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 8% 80px;background:radial-gradient(circle at top right,rgba(88,166,255,.28),transparent 30%),radial-gradient(circle at bottom left,rgba(0,255,170,.12),transparent 25%),linear-gradient(180deg,#07111f,#0d1b2d)}
-.hero-content{max-width:1050px;animation:fadeUp 1s ease}
-.badge{display:inline-block;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#8de1ff;font-weight:700;margin-bottom:25px}
-h1{font-size:72px;line-height:1;margin-bottom:25px;font-weight:800}
-.hero-summary{font-size:22px;color:#d9e7f7;margin-bottom:20px}.hero-subtitle{font-size:18px;color:#9fb3c8;max-width:900px}
-.quote{margin-top:30px;padding:18px 24px;border-left:4px solid #58a6ff;background:rgba(255,255,255,.04);border-radius:14px;color:#dfefff;font-style:italic;max-width:850px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:50px}.stat-card{background:rgba(255,255,255,.05);padding:25px;border-radius:20px;text-align:center;border:1px solid rgba(255,255,255,.08)}.stat-card h2{font-size:42px;color:#58a6ff}.stat-card p{color:#c8d5e5}
-.section{padding:90px 8%}.section-title{font-size:42px;margin-bottom:20px;color:#58a6ff}.section-description{max-width:1000px;font-size:18px;color:#c8d5e5;margin-bottom:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:32px;border-radius:24px;backdrop-filter:blur(12px);transition:.4s ease}.card:hover{transform:translateY(-10px);border-color:rgba(88,166,255,.45);box-shadow:0 20px 45px rgba(0,0,0,.35)}.card h3{margin-bottom:16px;font-size:24px}.card p{color:#d8e2ee}
-.cert-badge{display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(0,255,170,.15);color:#9cffdc;font-size:13px;font-weight:700;margin-bottom:15px}
-.skills{display:flex;flex-wrap:wrap;gap:15px}.skill{padding:12px 18px;border-radius:999px;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.2);font-weight:600}
-.timeline{border-left:2px solid rgba(88,166,255,.3);padding-left:30px;display:flex;flex-direction:column;gap:30px}.timeline-item{position:relative}.timeline-item::before{content:'';position:absolute;left:-39px;top:10px;width:14px;height:14px;background:#58a6ff;border-radius:50%}
-.contact-box{display:flex;flex-wrap:wrap;gap:20px;margin-top:30px}.contact-item{background:rgba(255,255,255,.05);padding:18px 22px;border-radius:16px;border:1px solid rgba(255,255,255,.08)}
-.cv-btn{display:inline-block;margin-top:35px;padding:16px 28px;background:#58a6ff;color:#fff;border-radius:14px;text-decoration:none;font-weight:700;transition:.3s}.cv-btn:hover{transform:translateY(-3px);background:#4497f1}
-footer{text-align:center;padding:50px 20px;color:#8ea2b8}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){h1{font-size:46px}.section-title{font-size:34px}.hero-summary{font-size:18px}nav{padding:15px 5%}nav a{margin-left:10px;font-size:12px}}
-</style>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#07111f;color:#fff;overflow-x:hidden;line-height:1.8}html{scroll-behavior:smooth}nav{position:fixed;top:0;width:100%;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,17,31,.85);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.06)}nav h3{color:#8de1ff}nav a{color:#d8e2ee;text-decoration:none;margin-left:20px;font-size:14px;transition:.3s}nav a:hover{color:#58a6ff}.hero{min-height:100vh;display:flex;align-items:center;padding:120px 8% 80px;background:radial-gradient(circle at top right,rgba(88,166,255,.28),transparent 30%),radial-gradient(circle at bottom left,rgba(0,255,170,.12),transparent 25%),linear-gradient(180deg,#07111f,#0d1b2d)}.hero-content{max-width:1050px;animation:fadeUp 1s ease}.badge{display:inline-block;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#8de1ff;font-weight:700;margin-bottom:25px}h1{font-size:72px;line-height:1;margin-bottom:25px;font-weight:800}.hero-summary{font-size:22px;color:#d9e7f7;margin-bottom:20px}.hero-subtitle{font-size:18px;color:#9fb3c8;max-width:900px}.quote{margin-top:30px;padding:18px 24px;border-left:4px solid #58a6ff;background:rgba(255,255,255,.04);border-radius:14px;color:#dfefff;font-style:italic;max-width:850px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:50px}.stat-card{background:rgba(255,255,255,.05);padding:25px;border-radius:20px;text-align:center;border:1px solid rgba(255,255,255,.08)}.stat-card h2{font-size:42px;color:#58a6ff}.stat-card p{color:#c8d5e5}.section{padding:90px 8%}.section-title{font-size:42px;margin-bottom:20px;color:#58a6ff}.section-description{max-width:1000px;font-size:18px;color:#c8d5e5;margin-bottom:40px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:32px;border-radius:24px;backdrop-filter:blur(12px);transition:.4s ease}.card:hover{transform:translateY(-10px);border-color:rgba(88,166,255,.45);box-shadow:0 20px 45px rgba(0,0,0,.35)}.card h3{margin-bottom:16px;font-size:24px}.card p{color:#d8e2ee}.cert-badge{display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(0,255,170,.15);color:#9cffdc;font-size:13px;font-weight:700;margin-bottom:15px}.skills{display:flex;flex-wrap:wrap;gap:15px}.skill{padding:12px 18px;border-radius:999px;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.2);font-weight:600}.timeline{border-left:2px solid rgba(88,166,255,.3);padding-left:30px;display:flex;flex-direction:column;gap:30px}.timeline-item{position:relative}.timeline-item::before{content:'';position:absolute;left:-39px;top:10px;width:14px;height:14px;background:#58a6ff;border-radius:50%}.contact-box{display:flex;flex-wrap:wrap;gap:20px;margin-top:30px}.contact-item{background:rgba(255,255,255,.05);padding:18px 22px;border-radius:16px;border:1px solid rgba(255,255,255,.08)}.cv-btn{display:inline-block;margin-top:35px;padding:16px 28px;background:#58a6ff;color:#fff;border-radius:14px;text-decoration:none;font-weight:700;transition:.3s}.cv-btn:hover{transform:translateY(-3px);background:#4497f1}footer{text-align:center;padding:50px 20px;color:#8ea2b8}@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}@media(max-width:768px){h1{font-size:46px}.section-title{font-size:34px}.hero-summary{font-size:18px}nav{padding:15px 5%}nav a{margin-left:10px;font-size:12px}}</style>
 </head>
 <body>
-<nav>
-<h3>AEG</h3>
-<div>
-<a href="#about">About</a>
-<a href="#certifications">Certifications</a>
-<a href="#leadership">Leadership</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-<section class="hero">
-<div class="hero-content">
-<div class="badge">Ahmed Yasser Ahmed ElGioushy</div>
-<h1>Governance, Digital Transformation & Sustainable Leadership</h1>
-<p class="hero-summary">Ahmed Yasser Ahmed ElGioushy is a multidisciplinary professional with academic and practical interests in Governance, Digital Transformation, Artificial Intelligence, Sustainability, International Relations, and Logistics.</p>
-<p class="hero-subtitle">Passionate about leadership, innovation, governance awareness, youth empowerment, and building sustainable community impact through technology-driven initiatives and strategic development programs.</p>
-<div class="quote">“Driving sustainable impact through governance, innovation, and digital transformation.”</div>
-<div class="stats">
-<div class="stat-card"><h2>6+</h2><p>Professional Certifications</p></div>
-<div class="stat-card"><h2>7</h2><p>Cohorts Participation</p></div>
-<div class="stat-card"><h2>2</h2><p>Academic Degrees</p></div>
-<div class="stat-card"><h2>AI</h2><p>Governance & Innovation Focus</p></div>
-</div>
-<a class="cv-btn" href="#contact">Download CV</a>
-</div>
-</section>
-<section class="section" id="about">
-<h2 class="section-title">Academic Background</h2>
-<div class="timeline">
-<div class="timeline-item"><h3>Master of Science (M.Sc.)</h3><p>Legal, Commercial, International Transactions and Logistics — Arab Academy for Science, Technology & Maritime Transport.</p></div>
-<div class="timeline-item"><h3>Bachelor’s Degree</h3><p>Legal Studies and International Relations — Pharos University in Alexandria.</p></div>
-<div class="timeline-item"><h3>Professional Identity</h3><p>National ID: 2960********0511</p></div>
-</div>
-</section>
-<section class="section">
-<h2 class="section-title">About Me</h2>
-<p class="section-description">Academic and community-focused professional dedicated to governance awareness, digital transformation initiatives, sustainability culture, artificial intelligence development, and empowering youth participation through modern leadership and innovation-driven engagement.</p>
-<div class="grid">
-<div class="card"><h3>Professional Development</h3><p>Continuously developing expertise in governance frameworks, emerging technologies, sustainability strategy, digital transformation methodologies, and artificial intelligence applications.</p></div>
-<div class="card"><h3>Organizations & Memberships</h3><p>Official Member at Engineers for Sustainable Egypt Foundation.</p></div>
-<div class="card"><h3>Community Engagement</h3><p>Active participant in graduation events and activities related to Cohort 5, Cohort 6, and Cohort 7 with a focus on collaboration, leadership development, and professional networking.</p></div>
-</div>
-</section>
-<section class="section" id="certifications">
-<h2 class="section-title">Certifications & Academic Qualifications</h2>
-<div class="grid">
-<div class="card"><div class="cert-badge">Certified</div><h3>AI Ambassadors Program – Basic Level</h3></div>
-<div class="card"><div class="cert-badge">Certified</div><h3>AI Ambassadors Program – Advanced Level</h3></div>
-<div class="card"><div class="cert-badge">Certified</div><h3>Governance & Digital Transformation – Basic Level</h3></div>
-<div class="card"><div class="cert-badge">Certified</div><h3>Governance & Digital Transformation – Advanced Level</h3></div>
-<div class="card"><div class="cert-badge">Certified Academic Degree</div><h3>Bachelor’s Degree in Legal Studies and International Relations</h3><p>Pharos University in Alexandria.</p></div>
-<div class="card"><div class="cert-badge">Certified Academic Degree</div><h3>Master of Science (M.Sc.) in Legal, Commercial, International Transactions and Logistics</h3><p>Arab Academy for Science, Technology & Maritime Transport.</p></div>
-</div>
-</section>
-<section class="section" id="leadership">
-<h2 class="section-title">Volunteer Work & Leadership</h2>
-<div class="grid">
-<div class="card"><h3>Community Service</h3><p>Contributed to volunteer initiatives supporting sustainability awareness, youth empowerment, and positive social impact programs.</p></div>
-<div class="card"><h3>Digital Awareness Initiatives</h3><p>Participated in digital awareness campaigns promoting responsible technology use, innovation culture, governance concepts, and digital transformation awareness.</p></div>
-<div class="card"><h3>Team Collaboration</h3><p>Worked within collaborative environments focused on leadership development, project coordination, teamwork, and sustainable community engagement.</p></div>
-</div>
-</section>
-<section class="section">
-<h2 class="section-title">Core Skills</h2>
-<div class="skills">
-<div class="skill">Governance</div><div class="skill">Digital Transformation</div><div class="skill">Artificial Intelligence</div><div class="skill">International Relations</div><div class="skill">Sustainability</div><div class="skill">Strategic Leadership</div><div class="skill">International Logistics</div><div class="skill">Research & Analysis</div><div class="skill">Community Development</div><div class="skill">Innovation Management</div>
-</div>
-</section>
-<section class="section" id="contact">
-<h2 class="section-title">Contact & Professional Presence</h2>
-<p class="section-description">Open to professional networking, governance initiatives, sustainability projects, and innovation-focused collaborations.</p>
-<div class="contact-box">
-<div class="contact-item">📍 Cairo, Egypt</div>
-<div class="contact-item">💼 LinkedIn: Ahmed ElGioushy</div>
-<div class="contact-item">💻 GitHub: AEGioushy</div>
-<div class="contact-item">📧 Professional Portfolio Contact</div>
-</div>
-</section>
+<nav><h3>AEG</h3><div><a href="#about">About</a><a href="#certifications">Certifications</a><a href="#leadership">Leadership</a><a href="#contact">Contact</a></div></nav>
+<section class="hero"><div class="hero-content"><div class="badge">Ahmed Yasser Ahmed ElGioushy</div><h1>Governance, Digital Transformation & Sustainable Leadership</h1><p class="hero-summary">Ahmed Yasser Ahmed ElGioushy is a multidisciplinary professional with academic and practical interests in Governance, Digital Transformation, Artificial Intelligence, Sustainability, International Relations, and Logistics.</p><p class="hero-subtitle">Passionate about leadership, innovation, governance awareness, youth empowerment, and building sustainable community impact through technology-driven initiatives and strategic development programs.</p><div class="quote">“Driving sustainable impact through governance, innovation, and digital transformation.”</div><div class="stats"><div class="stat-card"><h2>6+</h2><p>Professional Certifications</p></div><div class="stat-card"><h2>7</h2><p>Cohorts Participation</p></div><div class="stat-card"><h2>2</h2><p>Academic Degrees</p></div><div class="stat-card"><h2>AI</h2><p>Governance & Innovation Focus</p></div></div><a class="cv-btn" href="#contact">Download CV</a></div></section>
+<section class="section" id="about"><h2 class="section-title">Academic Background</h2><div class="timeline"><div class="timeline-item"><h3>Master of Science (M.Sc.)</h3><p>Legal, Commercial, International Transactions and Logistics — Arab Academy for Science, Technology & Maritime Transport.</p></div><div class="timeline-item"><h3>Bachelor’s Degree</h3><p>Legal Studies and International Relations — Pharos University in Alexandria.</p></div><div class="timeline-item"><h3>Professional Identity</h3><p>National ID: 2960********0511</p></div></div></section>
+<section class="section"><h2 class="section-title">About Me</h2><p class="section-description">Academic and community-focused professional dedicated to governance awareness, digital transformation initiatives, sustainability culture, artificial intelligence development, and empowering youth participation through modern leadership and innovation-driven engagement.</p><div class="grid"><div class="card"><h3>Professional Development</h3><p>Continuously developing expertise in governance frameworks, emerging technologies, sustainability strategy, digital transformation methodologies, and artificial intelligence applications.</p></div><div class="card"><h3>Organizations & Memberships</h3><p>Official Member at Engineers for Sustainable Egypt Foundation.</p></div><div class="card"><h3>Community Engagement</h3><p>Active participant in graduation events and activities related to Cohort 5, Cohort 6, and Cohort 7 with a focus on collaboration, leadership development, and professional networking.</p></div></div></section>
+<section class="section" id="certifications"><h2 class="section-title">Certifications & Academic Qualifications</h2><div class="grid"><div class="card"><div class="cert-badge">Certified</div><h3>AI Ambassadors Program – Basic Level</h3></div><div class="card"><div class="cert-badge">Certified</div><h3>AI Ambassadors Program – Advanced Level</h3></div><div class="card"><div class="cert-badge">Certified</div><h3>Governance & Digital Transformation – Basic Level</h3></div><div class="card"><div class="cert-badge">Certified</div><h3>Governance & Digital Transformation – Advanced Level</h3></div><div class="card"><div class="cert-badge">Certified Academic Degree</div><h3>Bachelor’s Degree in Legal Studies and International Relations</h3><p>Pharos University in Alexandria.</p></div><div class="card"><div class="cert-badge">Certified Academic Degree</div><h3>Master of Science (M.Sc.) in Legal, Commercial, International Transactions and Logistics</h3><p>Arab Academy for Science, Technology & Maritime Transport.</p></div></div></section>
+<section class="section" id="leadership"><h2 class="section-title">Volunteer Work & Leadership</h2><div class="grid"><div class="card"><h3>Community Service</h3><p>Contributed to volunteer initiatives supporting sustainability awareness, youth empowerment, and positive social impact programs.</p></div><div class="card"><h3>Digital Awareness Initiatives</h3><p>Participated in digital awareness campaigns promoting responsible technology use, innovation culture, governance concepts, and digital transformation awareness.</p></div><div class="card"><h3>Team Collaboration</h3><p>Worked within collaborative environments focused on leadership development, project coordination, teamwork, and sustainable community engagement.</p></div></div></section>
+<section class="section"><h2 class="section-title">Core Skills</h2><div class="skills"><div class="skill">Governance</div><div class="skill">Digital Transformation</div><div class="skill">Artificial Intelligence</div><div class="skill">International Relations</div><div class="skill">Sustainability</div><div class="skill">Strategic Leadership</div><div class="skill">International Logistics</div><div class="skill">Research & Analysis</div><div class="skill">Community Development</div><div class="skill">Innovation Management</div></div></section>
+<section class="section" id="contact"><h2 class="section-title">Contact & Professional Presence</h2><p class="section-description">Open to professional networking, governance initiatives, sustainability projects, and innovation-focused collaborations.</p><div class="contact-box"><div class="contact-item">📍 Cairo, Egypt</div><div class="contact-item">💼 LinkedIn: Ahmed ElGioushy</div><div class="contact-item">💻 GitHub: AEGioushy</div><div class="contact-item">📧 ahmedelguoshy@gmail.com</div><div class="contact-item">📱 +20 106 573 373</div></div></section>
 <footer>Ahmed Yasser Ahmed ElGioushy • Professional Academic Portfolio</footer>
 </body>
 </html>

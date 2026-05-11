@@ -8,45 +8,7 @@
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap' rel='stylesheet'>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;background:#050b16;color:#fff;overflow-x:hidden;background-image:radial-gradient(circle at top right,rgba(88,166,255,.15),transparent 25%),radial-gradient(circle at bottom left,rgba(0,255,170,.08),transparent 25%)}
-nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:rgba(4,10,20,.88);backdrop-filter:blur(16px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.06)}
-nav h2{color:#8de1ff;font-size:28px}
-nav div{display:flex;gap:24px}
-nav a{text-decoration:none;color:#d7e4f2;font-size:15px}
-.hero{padding:160px 8% 90px;display:grid;grid-template-columns:360px 1fr;gap:70px;align-items:center}
-.profile-card,.card,.stat{background:#101826;border:1px solid #1e2c42;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.35);transition:.4s}
-.profile-card:hover,.card:hover,.stat:hover{transform:translateY(-8px);box-shadow:0 0 35px rgba(88,166,255,.18)}
-.profile-card{padding:18px}
-.profile-card img{width:100%;height:470px;object-fit:cover;border-radius:22px}
-.badge{display:inline-block;padding:10px 18px;border-radius:999px;background:#58a6ff1a;border:1px solid #58a6ff40;color:#8de1ff;font-size:13px;font-weight:700;margin-bottom:24px}
-.hero h1{font-size:72px;line-height:1.05;margin-bottom:18px;font-weight:800}
-.hero h1 span{color:#8de1ff}
-.typing{font-size:22px;color:#8de1ff;margin-bottom:22px;border-right:2px solid #8de1ff;width:fit-content;padding-right:8px;animation:blink 1s infinite}
-.hero p{font-size:20px;color:#c8d5e5;line-height:1.9}
-.quote{margin-top:28px;padding:20px;background:#ffffff08;border-left:4px solid #58a6ff;border-radius:14px;font-style:italic}
-.hero-buttons{display:flex;gap:18px;margin-top:35px;flex-wrap:wrap}
-.btn{padding:16px 28px;border-radius:14px;text-decoration:none;font-weight:700;transition:.3s}
-.primary{background:#8de1ff;color:#08111e}.secondary{border:1px solid #58a6ff55;color:#8de1ff}
-.btn:hover{transform:translateY(-4px)}
-.stats,.grid,.skills,.social-links,.timeline{display:grid;gap:22px}
-.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:45px}
-.stat{padding:28px}.stat h2{font-size:42px;color:#8de1ff}
-.section{padding:70px 8%}
-.title{font-size:42px;margin-bottom:28px}
-.subtitle{color:#b8cadf;line-height:1.9;max-width:900px;margin-bottom:34px}
-.grid{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
-.card{padding:30px}
-.card h3{margin-bottom:14px;color:#fff}.card p,.card li{color:#c7d6e8;line-height:1.9}
-.blue{border-top:3px solid #58a6ff}.gold{border-top:3px solid #8de1ff}.green{border-top:3px solid #00ffaa}
-.skills{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.skill{padding:16px 20px;background:#58a6ff12;border:1px solid #58a6ff33;border-radius:18px}
-.timeline .card{position:relative;padding-left:55px}.timeline .card:before{content:'';position:absolute;left:22px;top:34px;width:12px;height:12px;border-radius:50%;background:#8de1ff;box-shadow:0 0 20px #8de1ff}
-.social-links{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.social-links a{text-decoration:none;color:#fff;padding:24px;background:#101826;border-radius:22px;border:1px solid #1e2c42}
-footer{text-align:center;padding:45px;color:#8ea2b8;border-top:1px solid rgba(255,255,255,.08)}
-@keyframes blink{50%{border-color:transparent}}
-@media(max-width:950px){.hero{grid-template-columns:1fr}.hero h1{font-size:48px}nav div{display:none}}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,sans-serif;background:#050b16;color:#fff;overflow-x:hidden;background-image:radial-gradient(circle at top right,rgba(88,166,255,.15),transparent 25%),radial-gradient(circle at bottom left,rgba(0,255,170,.08),transparent 25%)}nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:rgba(4,10,20,.88);backdrop-filter:blur(16px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.06)}nav h2{color:#8de1ff;font-size:28px}nav div{display:flex;gap:24px}nav a{text-decoration:none;color:#d7e4f2;font-size:15px}.hero{padding:160px 8% 90px;display:grid;grid-template-columns:360px 1fr;gap:70px;align-items:center}.profile-card,.card,.stat{background:#101826;border:1px solid #1e2c42;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.35);transition:.4s}.profile-card:hover,.card:hover,.stat:hover{transform:translateY(-8px);box-shadow:0 0 35px rgba(88,166,255,.18)}.profile-card{padding:18px}.profile-card img{width:100%;height:470px;object-fit:cover;border-radius:22px}.badge{display:inline-block;padding:10px 18px;border-radius:999px;background:#58a6ff1a;border:1px solid #58a6ff40;color:#8de1ff;font-size:13px;font-weight:700;margin-bottom:24px}.hero h1{font-size:72px;line-height:1.05;margin-bottom:18px;font-weight:800}.hero h1 span{color:#8de1ff}.typing{font-size:22px;color:#8de1ff;margin-bottom:22px;border-right:2px solid #8de1ff;width:fit-content;padding-right:8px;animation:blink 1s infinite}.hero p{font-size:20px;color:#c8d5e5;line-height:1.9}.quote{margin-top:28px;padding:20px;background:#ffffff08;border-left:4px solid #58a6ff;border-radius:14px;font-style:italic}.hero-buttons{display:flex;gap:18px;margin-top:35px;flex-wrap:wrap}.btn{padding:16px 28px;border-radius:14px;text-decoration:none;font-weight:700;transition:.3s}.primary{background:#8de1ff;color:#08111e}.secondary{border:1px solid #58a6ff55;color:#8de1ff}.btn:hover{transform:translateY(-4px)}.stats,.grid,.skills,.social-links,.timeline{display:grid;gap:22px}.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:45px}.stat{padding:28px}.stat h2{font-size:42px;color:#8de1ff}.section{padding:70px 8%}.title{font-size:42px;margin-bottom:28px}.subtitle{color:#b8cadf;line-height:1.9;max-width:900px;margin-bottom:34px}.grid{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}.card{padding:30px}.card h3{margin-bottom:14px;color:#fff}.card p,.card li{color:#c7d6e8;line-height:1.9}.blue{border-top:3px solid #58a6ff}.gold{border-top:3px solid #8de1ff}.green{border-top:3px solid #00ffaa}.skills{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.skill{padding:16px 20px;background:#58a6ff12;border:1px solid #58a6ff33;border-radius:18px}.timeline .card{position:relative;padding-left:55px}.timeline .card:before{content:'';position:absolute;left:22px;top:34px;width:12px;height:12px;border-radius:50%;background:#8de1ff;box-shadow:0 0 20px #8de1ff}.social-links{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.social-links a{text-decoration:none;color:#fff;padding:24px;background:#101826;border-radius:22px;border:1px solid #1e2c42}footer{text-align:center;padding:45px;color:#8ea2b8;border-top:1px solid rgba(255,255,255,.08)}@keyframes blink{50%{border-color:transparent}}@media(max-width:950px){.hero{grid-template-columns:1fr}.hero h1{font-size:48px}nav div{display:none}}
 </style>
 </head>
 <body>
@@ -68,10 +30,10 @@ footer{text-align:center;padding:45px;color:#8ea2b8;border-top:1px solid rgba(25
 <div class='badge'>GOVERNANCE • LEGAL TECH • AI • SUSTAINABILITY</div>
 <h1>Ahmed <span>ElGioushy</span></h1>
 <div class='typing'>Governance & Digital Transformation Researcher</div>
-<p>Legal & Governance Professional, AI & Sustainability Advocate, Academic Researcher, and Community-Oriented Leader focused on digital transformation and future-ready governance systems.</p>
+<p>Governance, Digital Transformation, and International Relations Professional with academic specialization in International Transactions & Logistics, Artificial Intelligence, Sustainability, and Legal Technology.</p>
 <div class='quote'>“Building bridges between governance, technology, sustainability, and society.”</div>
 <div class='hero-buttons'>
-<a class='btn primary' href='#contact'>Contact Me</a>
+<a class='btn primary' href='https://linkedin.com/in/aelgioushy' target='_blank'>View LinkedIn</a>
 <a class='btn secondary' href='#research'>Explore Research</a>
 </div>
 <div class='stats'>
@@ -91,64 +53,8 @@ footer{text-align:center;padding:45px;color:#8ea2b8;border-top:1px solid rgba(25
 <div class='card green'><h3>AI & Sustainability</h3><p>Combining artificial intelligence with sustainable development initiatives and community impact.</p></div>
 </div>
 </section>
-<section class='section' id='timeline'>
-<div class='title'>Academic & Professional Journey</div>
-<div class='timeline'>
-<div class='card'><h3>Pharos University</h3><p>Legal Studies & International Relations.</p></div>
-<div class='card'><h3>AASTMT</h3><p>M.Sc. in International Transactions & Logistics.</p></div>
-<div class='card'><h3>Professional Experience</h3><p>Amazon UK, Emaar Dubai, Dubai Mall, Altice USA, and ECC Solutions.</p></div>
-<div class='card'><h3>Governance Activities</h3><p>Governance, AI, Sustainability, and Digital Transformation initiatives.</p></div>
-</div>
-</section>
-<section class='section' id='research'>
-<div class='title'>Current Research Focus</div>
-<div class='subtitle'>International Commercial Arbitration & Digital Governance — exploring the relationship between legal systems, governance structures, AI, and digital transformation.</div>
-<div class='skills'>
-<div class='skill'>Digital Governance</div>
-<div class='skill'>Legal Informatics</div>
-<div class='skill'>AI Ethics</div>
-<div class='skill'>Smart Cities</div>
-<div class='skill'>Cyber Governance</div>
-<div class='skill'>International Law</div>
-<div class='skill'>ESG & Sustainability</div>
-<div class='skill'>Digital Society</div>
-</div>
-</section>
-<section class='section' id='case'>
-<div class='title'>Featured Case Studies</div>
-<div class='grid'>
-<div class='card blue'><h3>Hayah Karima Initiative</h3><p>Analytical perspective on sustainable rural development and governance transformation initiatives in Egypt.</p></div>
-<div class='card green'><h3>Digital Justice Concept</h3><p>Exploring AI-powered legal accessibility and future digital justice systems.</p></div>
-<div class='card gold'><h3>Smart Governance Vision</h3><p>Frameworks for integrating governance principles with digital infrastructure and smart services.</p></div>
-</div>
-</section>
-<section class='section'>
-<div class='title'>Languages</div>
-<div class='skills'>
-<div class='skill'>Arabic (Native)</div>
-<div class='skill'>English (Professional)</div>
-<div class='skill'>French (Learning)</div>
-<div class='skill'>German (Learning)</div>
-</div>
-</section>
-<section class='section'>
-<div class='title'>Professional Presence</div>
-<div class='social-links'>
-<a href='https://linkedin.com/in/aelgioushy' target='_blank'>LinkedIn</a>
-<a href='https://github.com/AElGioushy' target='_blank'>GitHub</a>
-<a href='mailto:ahmedelguoshy@gmail.com'>Professional Email</a>
-</div>
-</section>
-<section class='section' id='contact'>
-<div class='title'>Contact</div>
-<div class='grid'>
-<div class='card'><h3>Email</h3><p>ahmedelguoshy@gmail.com</p></div>
-<div class='card'><h3>Location</h3><p>Cairo, Egypt</p></div>
-<div class='card'><h3>Current Position</h3><p>Sales Executive at ECC Solutions</p></div>
-</div>
-</section>
 <footer>
-Ahmed ElGioushy • Governance & Digital Transformation Professional • 2026
+Ahmed ElGioushy • Governance & Digital Transformation Professional • LinkedIn: linkedin.com/in/aelgioushy
 </footer>
 </body>
 </html>

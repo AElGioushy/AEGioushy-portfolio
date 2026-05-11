@@ -31,50 +31,114 @@ const imageAltText = "desktop with books and laptop";
  */
 const projectList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
+    title: "AI Ambassadors Program",
     description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+      "Comprehensive training program covering AI concepts, applications, and strategic implementation for organizational transformation.",
+    url: "https://github.com",
   },
   {
-    title: "Web Development for Beginners",
+    title: "Digital Transformation Initiative",
     description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+      "Framework and strategy for integrating digital technologies across governance structures and organizational operations.",
+    url: "https://github.com",
   },
   {
-    title: "My Resume Site",
+    title: "Engineers for Sustainable Egypt",
     description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+      "Community-driven platform promoting engineering solutions for sustainable development and environmental stewardship.",
+    url: "https://github.com",
   },
   {
-    title: "GitHub Codespaces and github.dev",
+    title: "Community Leadership Program",
     description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+      "Youth empowerment initiative fostering next-generation leaders through mentorship, skills development, and practical experience.",
+    url: "https://github.com",
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
+    <section className="padding" id="portfolio" style={{ backgroundColor: "#f8f9fa" }}>
+      <h2 style={{ textAlign: "center", marginBottom: "3rem", color: "#4E567E" }}>Projects & Initiatives</h2>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          paddingTop: "1rem",
+          gap: "2rem",
+          width: "90%",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <div style={{ flex: "1", minWidth: "300px", maxWidth: "400px", animation: "slideInLeft 0.8s ease-out" }}>
           <img
             src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
+            style={{
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+              borderRadius: "10px",
+              boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+            }}
             alt={imageAltText}
           />
         </div>
-        <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "1.5rem",
+            flex: 1,
+            minWidth: "300px",
+          }}
+        >
+          {projectList.map((project, index) => (
+            <div
+              key={project.title}
+              style={{
+                backgroundColor: "white",
+                borderRadius: "10px",
+                border: "1px solid #E8EEF7",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                padding: "1.8rem",
+                textAlign: "left",
+                transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                cursor: "pointer",
+                animation: "slideInUp 0.6s ease-out forwards",
+                animationDelay: `${index * 0.1}s`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-6px)";
+                e.currentTarget.style.boxShadow = "0 8px 20px rgba(78, 86, 126, 0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.1)";
+              }}
+            >
+              <a href={project.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                <h3
+                  style={{
+                    flexBasis: "auto",
+                    margin: "0 0 1rem 0",
+                    color: "#4E567E",
+                    fontSize: "1.1rem",
+                    transition: "color 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => (e.target.style.color = "#D2F1E4")}
+                  onMouseLeave={(e) => (e.target.style.color = "#4E567E")}
+                >
+                  {project.title}
+                </h3>
               </a>
-              <p className="small">{project.description}</p>
+              <p style={{ fontSize: "0.95rem", color: "#555", lineHeight: "1.6", margin: 0 }}>
+                {project.description}
+              </p>
             </div>
           ))}
         </div>

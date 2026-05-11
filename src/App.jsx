@@ -7,10 +7,13 @@
 import React from "react";
 
 import About from "./Components/About";
+import Certifications from "./Components/Certifications";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
+import Organizations from "./Components/Organizations";
 import Portfolio from "./Components/Portfolio";
+import Volunteering from "./Components/Volunteering";
 
 import "./styles.css";
 
@@ -24,15 +27,15 @@ import "./styles.css";
  * If you don't have one of the social sites listed, leave it as an empty string.
  */
 const siteProps = {
-  name: "Alexandrie Grenier",
-  title: "Web Designer & Content Creator",
-  email: "alex@example.com",
-  gitHub: "microsoft",
-  instagram: "microsoft",
-  linkedIn: "satyanadella",
+  name: "AElGioushy",
+  title: "Professional | Digital Transformation | Community Leader",
+  email: "aelgioushy@example.com",
+  gitHub: "AElGioushy",
+  instagram: "",
+  linkedIn: "aelgioushy",
   medium: "",
-  twitter: "microsoft",
-  youTube: "Code",
+  twitter: "",
+  youTube: "",
 };
 
 const primaryColor = "#4E567E";
@@ -44,6 +47,9 @@ const App = () => {
       <Header />
       <Home name={siteProps.name} title={siteProps.title} />
       <About />
+      <Certifications />
+      <Organizations />
+      <Volunteering />
       <Portfolio />
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
     </div>

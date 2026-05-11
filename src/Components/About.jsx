@@ -24,19 +24,25 @@ const imageAltText = "purple and blue abstract background";
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "I'm a UI/UX student studying at Barnett Technical University. I enjoy creating unique and simplistic user interfaces in creative ways.";
+  "Passionate professional with expertise in Digital Transformation, Governance, and Artificial Intelligence. Background in Legal Studies and International Relations, with a strong commitment to community leadership and sustainability initiatives. Dedicated to leveraging technology and inclusive practices to drive positive change and empower emerging leaders.";
 
 /**
  * List of some of skills or technologies you work on, are learning,
  * passionate about, or enjoy,
  */
 const skillsList = [
-  "Web design",
-  "User experience",
-  "Inclusive design",
-  "Focus group testing",
-  "Mobile user interfaces",
-  "Graphic design",
+  "Artificial Intelligence Awareness",
+  "Digital Transformation",
+  "Governance Principles",
+  "Sustainability Initiatives",
+  "Community Leadership",
+  "Public Communication",
+  "Event Coordination",
+  "Strategic Thinking",
+  "Legal Studies & Analysis",
+  "International Relations",
+  "Logistics & Operations",
+  "Youth Empowerment",
 ];
 
 /**
@@ -45,7 +51,7 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "I am passionate about solving problems in new creative ways to drive innovation. By leveraging my UI/UX experience I continually look for new and better ways to make tech accessible by all.";
+  "I believe in the power of education and community engagement to create sustainable solutions. With a diverse background spanning legal frameworks, international relations, and digital innovation, I'm committed to bridging the gap between governance and technological advancement. My passion lies in empowering the next generation of leaders to tackle global challenges through collaboration, critical thinking, and creative problem-solving.";
 
 const About = () => {
   return (
@@ -54,30 +60,38 @@ const About = () => {
       <div
         style={{
           backgroundColor: "white",
-          width: "50%",
+          width: "90%",
+          maxWidth: "900px",
           padding: "4rem",
           margin: "3rem auto",
           textAlign: "center",
+          borderRadius: "12px",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+          animation: "fadeInUp 0.8s ease-out",
         }}
       >
-        <h2>About Myself</h2>
+        <h2>About Me</h2>
         <p className="large">{description}</p>
         <hr />
+        <h3 style={{ marginBottom: "1.5rem", color: "#4E567E" }}>Professional Skills & Expertise</h3>
         <ul
           style={{
             textAlign: "left",
             columns: 2,
-            fontSize: "1.25rem",
+            fontSize: "1.1rem",
             margin: "2rem 3rem",
             gap: "3rem",
+            listStylePosition: "inside",
           }}
         >
           {skillsList.map((skill) => (
-            <li key={skill}>{skill}</li>
+            <li key={skill} style={{ marginBottom: "0.8rem", lineHeight: "1.8" }}>
+              {skill}
+            </li>
           ))}
         </ul>
         <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+        <p style={{ padding: "1rem 3rem 0", fontSize: "1rem", lineHeight: "1.8" }}>{detailOrQuote}</p>
       </div>
     </section>
   );

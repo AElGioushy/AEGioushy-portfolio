@@ -1,6 +1,6 @@
 /**
-* CSS file to hold styles that apply across the application
-*/
+ * CSS file to hold styles that apply across the application
+ */
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap");
 
@@ -12,6 +12,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 div#main {
@@ -51,6 +52,7 @@ h1 {
   font-weight: 400;
   line-height: 0.8;
   margin: 0;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 h2 {
@@ -58,12 +60,14 @@ h2 {
   font-weight: 400;
   margin: 0;
   padding-top: 1rem;
+  letter-spacing: 0.5px;
 }
 
 h3 {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1.25rem;
   margin: 0;
+  letter-spacing: 0.3px;
 }
 
 p {
@@ -75,6 +79,7 @@ p {
 
 p.large {
   font-size: 24px;
+  font-weight: 400;
 }
 
 p.small {
@@ -83,6 +88,8 @@ p.small {
 
 hr {
   margin: 2.5rem;
+  border: none;
+  border-top: 2px solid #E8EEF7;
 }
 
 li {
@@ -96,6 +103,7 @@ li::marker {
 a {
   color: black;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -105,7 +113,7 @@ a:hover {
 .container {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 330px 300px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   margin: 20px auto;
 }
 
@@ -117,9 +125,154 @@ a:hover {
   justify-content: flex-start;
   padding: 24px 16px;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.container .box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 img.socialIcon {
   height: 30px;
   width: 30px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+img.socialIcon:hover {
+  filter: brightness(1.2);
+}
+
+/* Modern Animations */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  p.large {
+    font-size: 18px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  section.padding {
+    padding: 3rem 0;
+  }
+
+  hr {
+    margin: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  p.large {
+    font-size: 16px;
+  }
+
+  section.padding {
+    padding: 2rem 0;
+  }
 }

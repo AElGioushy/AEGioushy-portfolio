@@ -1,11 +1,11 @@
 import React from "react";
 import "./styles.css";
 
-const certifications = [
-  "AI Ambassadors Program – Basic Level",
-  "AI Ambassadors Program – Advanced Level",
-  "Governance & Digital Transformation – Basic Level",
-  "Governance & Digital Transformation – Advanced Level",
+const typingRoles = [
+  "Legal Tech & AI Advocate",
+  "Governance Specialist",
+  "Sustainability Researcher",
+  "Digital Transformation Professional",
 ];
 
 const researchTags = [
@@ -19,16 +19,20 @@ const researchTags = [
   "International Law",
 ];
 
-const stats = [
-  "5+ Professional Programs",
-  "4 Languages",
-  "3+ Years Experience",
-  "Governance & AI Researcher",
-];
-
 const App = () => {
   return (
     <div className="portfolio-app">
+      <nav className="floating-navbar">
+        <div className="nav-logo">AE</div>
+
+        <div className="nav-links">
+          <a href="#research">Research</a>
+          <a href="#case-studies">Case Studies</a>
+          <a href="#mission">Mission</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
       <section className="hero-section">
         <div className="overlay"></div>
 
@@ -38,7 +42,7 @@ const App = () => {
           <h1>Governance & Digital Transformation Researcher</h1>
 
           <div className="typing-text">
-            Legal Tech & AI Advocate
+            {typingRoles[0]}
           </div>
 
           <p className="hero-summary">
@@ -51,22 +55,19 @@ const App = () => {
         </div>
       </section>
 
-      <section className="content-section stats-section">
-        <div className="stats-grid">
-          {stats.map((item, index) => (
-            <div className="stats-card glow-card" key={index}>
-              <h3>{item}</h3>
-            </div>
-          ))}
+      <section className="content-section" id="mission">
+        <div className="section-header">
+          <h2>Professional Mission</h2>
+
+          <p>
+            My mission is to bridge governance, technology, sustainability, and law to support digitally empowered and socially sustainable communities.
+          </p>
         </div>
       </section>
 
-      <section className="content-section">
+      <section className="content-section dark-section" id="research">
         <div className="section-header">
-          <h2>Current Research Interests</h2>
-          <p>
-            Exploring the intersection between law, governance, sustainability, artificial intelligence, and digital transformation.
-          </p>
+          <h2>Research Interests</h2>
         </div>
 
         <div className="skills-wrapper">
@@ -76,82 +77,67 @@ const App = () => {
         </div>
       </section>
 
-      <section className="content-section dark-section">
+      <section className="content-section" id="case-studies">
         <div className="section-header">
-          <h2>Research & Publications</h2>
+          <h2>Featured Case Studies</h2>
+
           <p>
-            Academic and professional exploration of governance systems, AI ethics, legal technology, sustainability frameworks, and digital governance transformation.
+            Research-driven conceptual projects focused on governance, sustainability, and digital society transformation.
           </p>
         </div>
 
         <div className="grid-layout">
           <div className="glass-card glow-card">
-            <h3>AI & Legal Transformation</h3>
+            <h3>Hayah Karima Initiative</h3>
             <p>
-              Exploring how artificial intelligence is reshaping legal systems, legal accessibility, and future justice frameworks.
+              Analytical perspective on sustainable rural development and social transformation initiatives in Egypt.
             </p>
           </div>
 
           <div className="glass-card glow-card">
-            <h3>Digital Governance in Egypt</h3>
+            <h3>Digital Justice Concept</h3>
             <p>
-              Researching governance modernization and digital transformation strategies within public institutions.
+              Exploring AI-powered legal accessibility and future digital justice systems.
             </p>
           </div>
 
           <div className="glass-card glow-card">
-            <h3>Sustainable Logistics Frameworks</h3>
+            <h3>Smart Governance Vision</h3>
             <p>
-              Examining sustainable logistics systems and future-ready transportation models.
+              Frameworks for integrating governance principles with digital infrastructure and smart services.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="content-section">
-        <div className="section-header">
-          <h2>Speaking & Conferences</h2>
-        </div>
-
-        <div className="timeline-wrapper">
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <p>Cairo ICT Participation & Networking Activities</p>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <p>Governance & Digital Transformation Programs</p>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <p>Community Leadership & Sustainability Events</p>
           </div>
         </div>
       </section>
 
       <section className="content-section dark-section">
         <div className="section-header">
-          <h2>What I’m Working On</h2>
+          <h2>Professional Insights</h2>
+
+          <p>
+            Sharing perspectives on governance, AI ethics, sustainability, and digital transformation.
+          </p>
         </div>
 
-        <div className="grid-layout">
-          <div className="glass-card glow-card">
-            <h3>AI in Legal Systems</h3>
+        <div className="timeline-wrapper">
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <p>The Future of AI in Legal Systems</p>
           </div>
 
-          <div className="glass-card glow-card">
-            <h3>Digital Governance Models</h3>
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <p>Governance & Digital Society Transformation</p>
           </div>
 
-          <div className="glass-card glow-card">
-            <h3>Smart Community Solutions</h3>
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <p>Sustainability and Community Innovation</p>
           </div>
         </div>
       </section>
 
-      <footer className="footer-section">
+      <footer className="footer-section" id="contact">
         <h3>Ahmed ElGioushy</h3>
 
         <p>

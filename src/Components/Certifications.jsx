@@ -1,36 +1,66 @@
-/**
- * Certifications component
- *
- * Showcases professional certifications, training programs, and
- * professional development achievements.
- */
-
 import React from "react";
 
 const certifications = [
   {
     title: "AI Ambassadors Program – Basic Level",
-    issuer: "Professional Development Program",
+    issuer: "IBM",
+    certifiedBy: "IBM",
     year: "2025",
-    description: "Foundational training in AI concepts, applications, and ethical considerations.",
+    description:
+      "Foundational training in AI concepts, applications, and ethical considerations.",
+    image: "/certificates/ai_basic_ibm.png",
   },
   {
     title: "AI Ambassadors Program – Advanced Level",
-    issuer: "Professional Development Program",
+    issuer: "Microsoft",
+    certifiedBy: "Microsoft",
     year: "2025",
-    description: "Advanced expertise in AI implementation, strategy, and organizational transformation.",
+    description:
+      "Advanced expertise in AI implementation, strategy, and organizational transformation.",
+    image: "/certificates/ai_advanced_ms.png",
   },
   {
     title: "Governance and Digital Transformation Program – Basic Level",
-    issuer: "Professional Development Program",
+    issuer: "NCA",
+    certifiedBy: "National Communication Authority (NCA)",
     year: "2025",
-    description: "Fundamentals of governance frameworks and digital transformation strategies.",
+    description:
+      "Fundamentals of governance frameworks and digital transformation strategies.",
+    image: "/certificates/gov_basic_nca.png",
   },
   {
     title: "Governance and Digital Transformation Program – Advanced Level",
-    issuer: "Professional Development Program",
+    issuer: "NCA",
+    certifiedBy: "National Communication Authority (NCA)",
     year: "2025",
-    description: "Advanced principles of organizational governance and digital innovation implementation.",
+    description:
+      "Advanced principles of organizational governance and digital innovation implementation.",
+    image: "/certificates/gov_advanced_nca.png",
+  },
+  {
+    title: "Digital Transformation Program – Basic Level",
+    issuer: "Udacity",
+    certifiedBy: "Udacity",
+    year: "2025",
+    description: "Digital economy and transformation essentials.",
+    image: "/certificates/dt_basic_udacity.png",
+  },
+  {
+    title: "Digital Transformation Program – Advanced Level",
+    issuer: "Udacity",
+    certifiedBy: "Udacity",
+    year: "2025",
+    description: "Advanced digital transformation for enterprises.",
+    image: "/certificates/dt_advanced_udacity.png",
+  },
+  {
+    title: "Master’s Degree in [Your Program]",
+    issuer: "Arab Academy for Science, Technology and Maritime Transport",
+    certifiedBy: "AASTMT",
+    year: "2024",
+    description:
+      "Awarded a master's degree in [Program/Field].",
+    image: "/certificates/master-cert.jpg",
   },
 ];
 
@@ -88,8 +118,13 @@ const Certifications = () => {
                   {cert.year}
                 </span>
               </div>
-              <p style={{ fontSize: "0.95rem", color: "#666", margin: "0.5rem 0 1rem 0" }}>{cert.issuer}</p>
+              <p style={{ fontSize: "0.95rem", color: "#666", margin: "0.5rem 0 1rem 0" }}>
+                <b>Certified by:</b> {cert.certifiedBy}
+              </p>
               <p style={{ fontSize: "0.95rem", color: "#555", lineHeight: "1.6", margin: 0 }}>{cert.description}</p>
+              {cert.image && (
+                <img src={cert.image} alt={cert.title} style={{ width: "100%", maxWidth: 220, margin: "1rem auto 0", display: "block", borderRadius: "8px"}} />
+              )}
             </div>
           ))}
         </div>

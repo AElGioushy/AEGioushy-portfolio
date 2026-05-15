@@ -1,0 +1,17 @@
+{
+  "name": "AEG | Ahmed ElGioushy Portfolio",
+  "short_name": "AEG Portfolio",
+  "description": "Ahmed ElGioushy executive academic portfolio in law, logistics, governance, arbitration, and digital transformation.",
+  "start_url": "/AEGioushy-portfolio/",
+  "display": "standalone",
+  "background_color": "#0B0B0C",
+  "theme_color": "#0B0B0C",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

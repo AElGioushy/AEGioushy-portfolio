@@ -524,6 +524,165 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function enhanceExecutiveNavigation() {
+    const desktopNav = document.querySelector('.desktop-nav');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const additions = [
+      { id: 'timeline', en: 'Timeline', ar: 'المسار' },
+      { id: 'research', en: 'Research', ar: 'الأبحاث' },
+      { id: 'projects', en: 'Projects', ar: 'المشروعات' }
+    ];
+
+    function buildLink(item) {
+      const link = document.createElement('a');
+      link.className = 'nav-link executive-added-link';
+      link.href = `#${item.id}`;
+      link.dataset.section = item.id;
+      link.innerHTML = `<span class="case-en">${item.en}</span><span class="case-ar">${item.ar}</span>`;
+      link.addEventListener('click', () => {
+        document.querySelector('.mobile-menu')?.classList.remove('open');
+        document.querySelector('.menu-btn')?.setAttribute('aria-expanded', 'false');
+      });
+      return link;
+    }
+
+    [desktopNav, mobileMenu].forEach((nav) => {
+      if (!nav) return;
+      const certificatesLink = nav.querySelector('a[href="#certificates"]');
+      additions.forEach((item) => {
+        if (nav.querySelector(`a[href="#${item.id}"]`)) return;
+        const link = buildLink(item);
+        if (certificatesLink) nav.insertBefore(link, certificatesLink);
+        else nav.appendChild(link);
+      });
+    });
+
+    const allLinks = Array.from(document.querySelectorAll('.nav-link[data-section]'));
+    const sections = allLinks
+      .map((link) => document.getElementById(link.dataset.section))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        allLinks.forEach((link) => {
+          const active = link.dataset.section === entry.target.id;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'page');
+          else link.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-34% 0px -54% 0px', threshold: 0.01 });
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  function enhancePremiumMotion() {
+    if (!document.getElementById('premium-motion-polish-styles')) {
+      const style = document.createElement('style');
+      style.id = 'premium-motion-polish-styles';
+      style.textContent = `
+        .reveal{transition-delay:var(--reveal-delay,0ms)}.magnetic-ready{will-change:transform}.premium-tilt{will-change:transform;transition:transform .24s ease,box-shadow .24s ease}.premium-tilt:hover{transform:translateY(-5px) scale(1.005)}.scroll-progress{position:fixed;left:0;top:0;height:2px;width:0;z-index:999999;background:linear-gradient(90deg,transparent,#c6a96b,#e4c77c);box-shadow:0 0 18px rgba(198,169,107,.45);pointer-events:none}.ambient-gold-line{position:fixed;right:18px;bottom:18px;width:84px;height:1px;z-index:5;background:linear-gradient(90deg,transparent,rgba(198,169,107,.65));opacity:.55;pointer-events:none}.floating-back-top{position:fixed;right:20px;bottom:28px;z-index:60;width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(17,19,24,.76);border:1px solid rgba(198,169,107,.22);color:#c6a96b;backdrop-filter:blur(14px);opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s ease}.floating-back-top.visible{opacity:1;transform:none;pointer-events:auto}.floating-back-top:hover{background:#c6a96b;color:#050505}@media(max-width:640px){.ambient-gold-line{display:none}.floating-back-top{right:16px;bottom:18px;width:42px;height:42px}}@media(prefers-reduced-motion:reduce){.premium-tilt:hover,.magnetic-ready,.floating-back-top{transform:none!important;transition:none!important}.scroll-progress{display:none}}
+      `;
+      document.head.appendChild(style);
+    }
+
+    if (!document.querySelector('.scroll-progress')) {
+      document.body.insertAdjacentHTML('afterbegin', '<div class="scroll-progress" aria-hidden="true"></div><div class="ambient-gold-line" aria-hidden="true"></div><button class="floating-back-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>');
+    }
+
+    document.querySelectorAll('.glass, .publication-card, .case-card, .story-card').forEach((card) => {
+      card.classList.add('premium-tilt');
+    });
+    document.querySelectorAll('a, button').forEach((control) => control.classList.add('magnetic-ready'));
+    document.querySelectorAll('.reveal').forEach((element, index) => {
+      element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 45}ms`);
+    });
+
+    const progress = document.querySelector('.scroll-progress');
+    const backTop = document.querySelector('.floating-back-top');
+    function updateScrollPolish() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      if (progress) progress.style.width = `${Math.max(0, Math.min(1, ratio)) * 100}%`;
+      backTop?.classList.toggle('visible', window.scrollY > 780);
+    }
+    updateScrollPolish();
+    window.addEventListener('scroll', updateScrollPolish, { passive: true });
+    backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    document.querySelectorAll('.magnetic-ready').forEach((element) => {
+      element.addEventListener('mousemove', (event) => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const rect = element.getBoundingClientRect();
+        const x = (event.clientX - rect.left - rect.width / 2) * 0.08;
+        const y = (event.clientY - rect.top - rect.height / 2) * 0.08;
+        element.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      element.addEventListener('mouseleave', () => {
+        element.style.transform = '';
+      });
+    });
+  }
+
+  function enhanceGitHubAnalytics() {
+    const githubHeading = document.querySelector('[data-i18n="githubTitle"]');
+    const githubSection = githubHeading?.closest('section');
+    if (!githubSection || githubSection.querySelector('.github-premium-suite')) return;
+    githubSection.id = githubSection.id || 'github';
+
+    if (!document.getElementById('github-analytics-suite-styles')) {
+      const style = document.createElement('style');
+      style.id = 'github-analytics-suite-styles';
+      style.textContent = `
+        .github-premium-suite{margin-top:34px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.github-panel{border-radius:26px;padding:24px;background:rgba(11,11,12,.58);border:1px solid rgba(198,169,107,.16);box-shadow:0 22px 62px rgba(0,0,0,.2)}.github-panel h3{font-size:1.2rem;margin-bottom:14px}.github-graph{width:100%;min-height:128px;object-fit:contain}.repo-list{display:grid;gap:12px}.repo-card{display:flex;justify-content:space-between;gap:14px;align-items:center;border-radius:18px;padding:14px;border:1px solid rgba(198,169,107,.14);background:rgba(255,255,255,.035)}.repo-card a{font-weight:800;color:#f3dfaa}.repo-card span{color:#94a3b8;font-size:.82rem}.visitor-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.visitor-chip{border-radius:18px;padding:16px;background:rgba(198,169,107,.07);border:1px solid rgba(198,169,107,.15);text-align:center}.visitor-chip strong{display:block;color:#c6a96b;font-size:1.35rem}.visitor-chip span{color:#cbd5e1;font-size:.78rem}@media(max-width:900px){.github-premium-suite{grid-template-columns:1fr}.visitor-row{grid-template-columns:1fr 1fr}}@media(max-width:560px){.visitor-row{grid-template-columns:1fr}.repo-card{align-items:flex-start;flex-direction:column}}
+      `;
+      document.head.appendChild(style);
+    }
+
+    const visits = Number(localStorage.getItem('aeg-portfolio-visits') || 0) + 1;
+    localStorage.setItem('aeg-portfolio-visits', String(visits));
+    const firstSeen = localStorage.getItem('aeg-portfolio-first-seen') || new Date().toISOString().slice(0, 10);
+    localStorage.setItem('aeg-portfolio-first-seen', firstSeen);
+
+    githubSection.querySelector('.max-w-7xl')?.insertAdjacentHTML('beforeend', `
+      <div class="github-premium-suite reveal" aria-label="GitHub analytics and repository showcase">
+        <article class="github-panel">
+          <h3><span class="case-en">Contribution Graph</span><span class="case-ar">رسم المساهمات</span></h3>
+          <img class="github-graph" loading="lazy" alt="GitHub contribution graph" src="https://github-readme-activity-graph.vercel.app/graph?username=AElGioushy&theme=github-compact&hide_border=true&area=true&color=C6A96B&line=C6A96B&point=E4C77C">
+        </article>
+        <aside class="github-panel">
+          <h3><span class="case-en">Portfolio Analytics</span><span class="case-ar">تحليلات الزيارة</span></h3>
+          <div class="visitor-row">
+            <div class="visitor-chip"><strong>${visits}</strong><span class="case-en">Local visits</span><span class="case-ar">زيارات محلية</span></div>
+            <div class="visitor-chip"><strong>${firstSeen}</strong><span class="case-en">First view</span><span class="case-ar">أول زيارة</span></div>
+            <div class="visitor-chip"><strong>Live</strong><span class="case-en">GitHub widgets</span><span class="case-ar">عناصر GitHub</span></div>
+          </div>
+        </aside>
+        <article class="github-panel">
+          <h3><span class="case-en">Repository Showcase</span><span class="case-ar">عرض المستودعات</span></h3>
+          <div class="repo-list">
+            <div class="repo-card"><a href="https://github.com/AElGioushy/AEGioushy-portfolio" target="_blank" rel="noopener noreferrer">AEGioushy Portfolio</a><span>Executive academic brand system</span></div>
+            <div class="repo-card"><a href="https://github.com/AElGioushy" target="_blank" rel="noopener noreferrer">AElGioushy GitHub</a><span>Public profile and future projects</span></div>
+          </div>
+        </article>
+        <article class="github-panel">
+          <h3><span class="case-en">Profile Views</span><span class="case-ar">مشاهدات الملف</span></h3>
+          <img loading="lazy" alt="GitHub profile views" src="https://komarev.com/ghpvc/?username=AElGioushy&style=for-the-badge&color=C6A96B&label=PROFILE+VIEWS">
+        </article>
+      </div>
+    `);
+  }
+
+  function enhanceSeoRuntime() {
+    if (!document.querySelector('link[rel="icon"]')) {
+      document.head.insertAdjacentHTML('beforeend', '<link rel="icon" type="image/png" href="logo.png"><link rel="apple-touch-icon" href="logo.png"><link rel="manifest" href="site.webmanifest">');
+    }
+    if (!document.querySelector('meta[name="theme-color"]')) {
+      document.head.insertAdjacentHTML('beforeend', '<meta name="theme-color" content="#0B0B0C"><meta name="application-name" content="AEG Portfolio">');
+    }
+  }
+
   if (langBtn) {
     langBtn.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'ar' : 'en';
@@ -549,5 +708,9 @@ document.addEventListener('DOMContentLoaded', () => {
   enhanceResearchPublications();
   enhanceCaseStudies();
   enhanceContactBackend();
+  enhanceExecutiveNavigation();
+  enhancePremiumMotion();
+  enhanceGitHubAnalytics();
+  enhanceSeoRuntime();
   applyLanguage();
 });

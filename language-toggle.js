@@ -179,6 +179,224 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function enhanceCaseStudies() {
+    const researchSection = document.getElementById('research');
+    if (!researchSection || document.getElementById('projects')) return;
+
+    if (!document.getElementById('executive-case-studies-styles')) {
+      const style = document.createElement('style');
+      style.id = 'executive-case-studies-styles';
+      style.textContent = `
+        .case-studies-section{position:relative;overflow:hidden}.case-studies-section:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 16%,rgba(198,169,107,.12),transparent 32%);pointer-events:none}.case-shell{position:relative}.case-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch;margin-bottom:30px}.case-panel{position:relative;overflow:hidden;border-radius:30px;padding:34px;background:linear-gradient(145deg,rgba(17,19,24,.88),rgba(17,19,24,.6));border:1px solid rgba(198,169,107,.16);box-shadow:0 26px 78px rgba(0,0,0,.24)}.case-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(198,169,107,.13),transparent 44%);pointer-events:none}.case-kicker{position:relative;display:inline-flex;align-items:center;gap:10px;color:#c6a96b;font-size:.76rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}.case-title{position:relative;font-family:'Playfair Display',serif;font-size:3rem;line-height:1.08;margin-bottom:16px}.case-copy{position:relative;color:#cbd5e1;line-height:1.85}.case-stats{display:grid;gap:14px}.case-stat{position:relative;border:1px solid rgba(198,169,107,.14);border-radius:20px;padding:18px 20px;background:rgba(255,255,255,.035)}.case-stat strong{display:block;color:#c6a96b;font-size:1.55rem}.case-stat span{color:#cbd5e1;font-size:.9rem}.case-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.case-card{display:flex;flex-direction:column;min-height:100%;border-radius:26px;padding:24px;background:rgba(11,11,12,.62);border:1px solid rgba(198,169,107,.15);box-shadow:0 22px 62px rgba(0,0,0,.2);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}.case-card:hover{transform:translateY(-4px);border-color:rgba(198,169,107,.34);box-shadow:0 32px 82px rgba(0,0,0,.32)}.case-icon{width:46px;height:46px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;background:rgba(198,169,107,.1);color:#c6a96b;border:1px solid rgba(198,169,107,.18);margin-bottom:18px}.case-card h3{font-size:1.12rem;line-height:1.35;margin-bottom:12px}.case-card p{color:#cbd5e1;line-height:1.72;font-size:.92rem;flex:1}.case-tags{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0}.case-tags span{border:1px solid rgba(198,169,107,.18);border-radius:999px;padding:6px 9px;background:rgba(198,169,107,.055);color:#e4d09a;font-size:.7rem}.case-open{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:auto;border-radius:999px;padding:10px 13px;border:1px solid rgba(198,169,107,.28);color:#f4e5b3;font-weight:800;font-size:.8rem;transition:.25s ease}.case-open:hover{background:#c6a96b;color:#050505}.case-modal{position:fixed;inset:0;z-index:99998;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.82);backdrop-filter:blur(14px)}.case-modal.open{display:flex}.case-dialog{width:min(880px,100%);max-height:88vh;overflow:auto;border-radius:30px;padding:30px;background:linear-gradient(145deg,rgba(17,19,24,.97),rgba(11,11,12,.96));border:1px solid rgba(198,169,107,.24);box-shadow:0 35px 100px rgba(0,0,0,.5)}.case-dialog-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:20px}.case-dialog h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1.15}.case-close{width:42px;height:42px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px solid rgba(198,169,107,.18);color:#fff}.case-close:hover{background:#c6a96b;color:#050505}.case-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.case-detail{border:1px solid rgba(198,169,107,.14);border-radius:20px;padding:18px;background:rgba(255,255,255,.035)}.case-detail h4{color:#c6a96b;font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}.case-detail p{color:#cbd5e1;line-height:1.75}.case-ar{display:none}html[lang="ar"] .case-en{display:none}html[lang="ar"] .case-ar{display:inline}html[lang="ar"] .case-panel,html[lang="ar"] .case-card,html[lang="ar"] .case-dialog{text-align:right}html[lang="ar"] .case-dialog-header{flex-direction:row-reverse}@media(max-width:1180px){.case-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:900px){.case-intro{grid-template-columns:1fr}.case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.case-title{font-size:2.3rem}}@media(max-width:640px){.case-panel,.case-dialog{padding:23px;border-radius:24px}.case-grid,.case-detail-grid{grid-template-columns:1fr}.case-title{font-size:1.95rem}.case-modal{padding:14px}.case-card{padding:22px}}
+      `;
+      document.head.appendChild(style);
+    }
+
+    const cases = [
+      {
+        id: 'hayah-karima',
+        icon: 'fa-hand-holding-heart',
+        title: 'Hayah Karima Initiative Analysis',
+        titleAr: 'تحليل مبادرة حياة كريمة',
+        summary: 'Executive analysis of rural development, public service access, and national-scale social impact delivery.',
+        summaryAr: 'تحليل تنفيذي للتنمية الريفية، وإتاحة الخدمات العامة، وتحقيق أثر اجتماعي واسع النطاق.',
+        objectives: 'Frame the initiative as a governance, inclusion, infrastructure, and quality-of-life transformation model.',
+        approach: 'Mapped stakeholders, delivery layers, beneficiary touchpoints, and measurable community development indicators.',
+        impact: 'Positions community development as a strategic governance case that connects social policy with execution capacity.',
+        fields: 'Governance, Sustainability, Public Policy, Community Development',
+        tags: ['Governance', 'Sustainability', 'Public Policy']
+      },
+      {
+        id: 'al-asmarat',
+        icon: 'fa-city',
+        title: 'Al Asmarat Development Case Study',
+        titleAr: 'دراسة حالة تطوير الأسمرات',
+        summary: 'Urban development case study focused on housing transformation, social protection, and dignity-led relocation.',
+        summaryAr: 'دراسة تطوير عمراني تركز على الإسكان، والحماية الاجتماعية، وإعادة التسكين القائمة على الكرامة.',
+        objectives: 'Analyze how planned urban development can address informal housing while improving services and public trust.',
+        approach: 'Reviewed the case through urban governance, resident experience, institutional coordination, and sustainability lenses.',
+        impact: 'Shows understanding of development projects as integrated social, legal, operational, and governance systems.',
+        fields: 'Urban Governance, Development, Social Impact, Sustainability',
+        tags: ['Urban Development', 'Social Impact', 'Planning']
+      },
+      {
+        id: 'governance-research',
+        icon: 'fa-building-columns',
+        title: 'Governance & Digital Transformation Research',
+        titleAr: 'بحث الحوكمة والتحول الرقمي',
+        summary: 'Research presentation connecting transparency, institutional modernization, and digital service transformation.',
+        summaryAr: 'عرض بحثي يربط بين الشفافية، وتحديث المؤسسات، وتحول الخدمات الرقمية.',
+        objectives: 'Define how governance maturity supports reliable digital transformation and citizen-centered public services.',
+        approach: 'Structured themes around accountability, process redesign, data flow, service accessibility, and change management.',
+        impact: 'Creates an executive bridge between academic governance concepts and practical transformation programs.',
+        fields: 'Digital Transformation, Governance, Service Design, Institutional Development',
+        tags: ['Digital Transformation', 'Governance', 'Public Sector']
+      },
+      {
+        id: 'smart-government',
+        icon: 'fa-network-wired',
+        title: 'Smart Government / Digital Governance Concepts',
+        titleAr: 'مفاهيم الحكومة الذكية والحوكمة الرقمية',
+        summary: 'Concept suite for smart services, connected institutions, digital identity, and accountable transformation systems.',
+        summaryAr: 'تصور للخدمات الذكية، والمؤسسات المتصلة، والهوية الرقمية، وأنظمة التحول المسؤولة.',
+        objectives: 'Present a future-ready model for government services that is accessible, measurable, secure, and human-centered.',
+        approach: 'Organized ideas into service journeys, data governance, AI readiness, risk controls, and user trust.',
+        impact: 'Signals strategic fluency in the language of smart transformation and responsible digital governance.',
+        fields: 'Smart Government, AI Governance, Legal Technology, Public Trust',
+        tags: ['Smart Government', 'AI Governance', 'Legal Tech']
+      },
+      {
+        id: 'logistics-transactions',
+        icon: 'fa-ship',
+        title: 'Logistics & International Transactions Projects',
+        titleAr: 'مشروعات اللوجستيات والمعاملات الدولية',
+        summary: 'Academic project framing logistics as a legal, commercial, and operational coordination environment.',
+        summaryAr: 'مشروع أكاديمي يعرض اللوجستيات كبيئة تنسيق قانونية وتجارية وتشغيلية.',
+        objectives: 'Connect cross-border trade, documentation, transport systems, and contractual obligations into one case model.',
+        approach: 'Built an analytical view of commercial movement, risk allocation, compliance, and international coordination.',
+        impact: 'Strengthens the portfolio identity around legal-logistics thinking and international commercial transactions.',
+        fields: 'Logistics, International Transactions, Commercial Law, Maritime Systems',
+        tags: ['Logistics', 'Transactions', 'Commercial Law']
+      },
+      {
+        id: 'arbitration-systems',
+        icon: 'fa-scale-balanced',
+        title: 'Arbitration & Legal Systems Analysis',
+        titleAr: 'تحليل التحكيم والأنظمة القانونية',
+        summary: 'Case-study layer derived from the thesis focus on arbitral awards, enforcement, and judicial control.',
+        summaryAr: 'طبقة دراسة حالة مستندة إلى موضوع الرسالة حول أحكام التحكيم والتنفيذ والرقابة القضائية.',
+        objectives: 'Explain how arbitration autonomy is balanced with court supervision, enforceability, and procedural fairness.',
+        approach: 'Compared legal principles, enforcement logic, institutional roles, and dispute-resolution safeguards.',
+        impact: 'Turns the thesis into a professional research story suitable for academic and executive audiences.',
+        fields: 'Arbitration, Judicial Review, Legal Systems, International Disputes',
+        tags: ['Arbitration', 'Legal Systems', 'Disputes']
+      },
+      {
+        id: 'community-sustainability',
+        icon: 'fa-seedling',
+        title: 'Community Development & Sustainability Topics',
+        titleAr: 'موضوعات التنمية المجتمعية والاستدامة',
+        summary: 'Portfolio case focused on social participation, youth engagement, and sustainability-oriented community value.',
+        summaryAr: 'حالة تعرض المشاركة المجتمعية، وتمكين الشباب، والقيمة المجتمعية المرتبطة بالاستدامة.',
+        objectives: 'Show how volunteer work and public initiatives can be assessed through long-term community outcomes.',
+        approach: 'Grouped themes around awareness, inclusion, participation, sustainability, and measurable civic contribution.',
+        impact: 'Connects academic identity with public responsibility and visible community-centered leadership.',
+        fields: 'Sustainability, Volunteering, Community Engagement, Youth Development',
+        tags: ['Sustainability', 'Community', 'Volunteering']
+      },
+      {
+        id: 'ai-awareness',
+        icon: 'fa-brain',
+        title: 'AI & Digital Awareness Initiatives',
+        titleAr: 'مبادرات الذكاء الاصطناعي والوعي الرقمي',
+        summary: 'Awareness project track translating AI concepts into responsible, accessible, and practical public understanding.',
+        summaryAr: 'مسار توعوي يترجم مفاهيم الذكاء الاصطناعي إلى فهم مسؤول ومتاح وعملي.',
+        objectives: 'Promote future-skills readiness while linking AI awareness to ethics, governance, and digital responsibility.',
+        approach: 'Presented AI topics through ambassador programs, community education, and practical digital literacy framing.',
+        impact: 'Adds a modern technology dimension to the portfolio while staying aligned with governance and legal awareness.',
+        fields: 'AI Awareness, Digital Literacy, Ethics, Governance',
+        tags: ['AI', 'Digital Awareness', 'Ethics']
+      }
+    ];
+
+    const cardsMarkup = cases.map((item) => `
+      <article class="case-card reveal">
+        <div class="case-icon" aria-hidden="true"><i class="fa-solid ${item.icon}"></i></div>
+        <h3><span class="case-en">${item.title}</span><span class="case-ar">${item.titleAr}</span></h3>
+        <p><span class="case-en">${item.summary}</span><span class="case-ar">${item.summaryAr}</span></p>
+        <div class="case-tags">${item.tags.map((tag) => `<span>${tag}</span>`).join('')}</div>
+        <button class="case-open" type="button" data-case="${item.id}">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span class="case-en">View Case Study</span><span class="case-ar">عرض الدراسة</span>
+        </button>
+      </article>
+    `).join('');
+
+    researchSection.insertAdjacentHTML('afterend', `
+      <section id="projects" class="case-studies-section section-padding reveal" aria-labelledby="projects-title">
+        <div class="max-w-7xl mx-auto case-shell">
+          <div class="case-intro">
+            <div class="case-panel">
+              <div class="case-kicker"><i class="fa-solid fa-briefcase"></i><span class="case-en">Projects & Case Studies</span><span class="case-ar">المشروعات ودراسات الحالة</span></div>
+              <h2 id="projects-title" class="case-title"><span class="case-en">Executive Academic Case Studies</span><span class="case-ar">دراسات حالة أكاديمية تنفيذية</span></h2>
+              <p class="case-copy"><span class="case-en">A premium project showcase translating legal, governance, logistics, technology, and community-development thinking into structured professional case studies.</span><span class="case-ar">عرض احترافي يحول التفكير القانوني والحوكمي واللوجستي والتقني والمجتمعي إلى دراسات حالة مهنية منظمة.</span></p>
+            </div>
+            <aside class="case-panel case-stats" aria-label="Case study focus areas">
+              <div class="case-stat"><strong>8</strong><span class="case-en">Executive case studies</span><span class="case-ar">دراسات حالة تنفيذية</span></div>
+              <div class="case-stat"><strong>5+</strong><span class="case-en">Strategic research fields</span><span class="case-ar">مجالات بحثية استراتيجية</span></div>
+              <div class="case-stat"><strong>360</strong><span class="case-en">Governance, law, logistics, AI, and community impact view</span><span class="case-ar">رؤية شاملة للحوكمة والقانون واللوجستيات والذكاء الاصطناعي والأثر المجتمعي</span></div>
+            </aside>
+          </div>
+          <div class="case-grid" aria-label="Premium project case study cards">${cardsMarkup}</div>
+        </div>
+      </section>
+      <div class="case-modal" id="caseStudyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+        <div class="case-dialog">
+          <div class="case-dialog-header">
+            <div>
+              <div class="case-kicker"><i class="fa-solid fa-folder-open"></i><span class="case-en">Executive Case Study</span><span class="case-ar">دراسة حالة تنفيذية</span></div>
+              <h3 id="caseModalTitle"></h3>
+            </div>
+            <button class="case-close" type="button" aria-label="Close case study"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="case-detail-grid">
+            <article class="case-detail"><h4>Executive Summary</h4><p data-case-field="summary"></p></article>
+            <article class="case-detail"><h4>Objectives</h4><p data-case-field="objectives"></p></article>
+            <article class="case-detail"><h4>Analysis / Approach</h4><p data-case-field="approach"></p></article>
+            <article class="case-detail"><h4>Impact / Insights</h4><p data-case-field="impact"></p></article>
+            <article class="case-detail"><h4>Fields Involved</h4><p data-case-field="fields"></p></article>
+            <article class="case-detail"><h4>Professional Tags</h4><p data-case-field="tags"></p></article>
+          </div>
+        </div>
+      </div>
+    `);
+
+    const modal = document.getElementById('caseStudyModal');
+    const modalTitle = document.getElementById('caseModalTitle');
+    const closeButton = modal?.querySelector('.case-close');
+    const fields = modal ? Array.from(modal.querySelectorAll('[data-case-field]')) : [];
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function openModal(caseId) {
+      const selected = cases.find((item) => item.id === caseId);
+      if (!selected || !modal || !modalTitle) return;
+      const isArabic = document.documentElement.lang === 'ar';
+      modalTitle.textContent = isArabic ? selected.titleAr : selected.title;
+      fields.forEach((field) => {
+        const key = field.dataset.caseField;
+        field.textContent = key === 'tags' ? selected.tags.join(' | ') : selected[key];
+      });
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    document.querySelectorAll('.case-open').forEach((button) => {
+      button.addEventListener('click', () => openModal(button.dataset.case));
+    });
+
+    closeButton?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal?.classList.contains('open')) closeModal();
+    });
+
+    document.querySelectorAll('#projects.reveal, #projects .reveal').forEach((el) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+      }, { threshold: 0.12 });
+      observer.observe(el);
+    });
+  }
+
   if (langBtn) {
     langBtn.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'ar' : 'en';
@@ -202,5 +420,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   enhanceResearchPublications();
+  enhanceCaseStudies();
   applyLanguage();
 });

@@ -22,19 +22,31 @@
   {"@context":"https://schema.org","@type":"Person","name":"Ahmed ElGioushy","url":"https://aelgioushy.github.io/AEGioushy-portfolio/","sameAs":["https://github.com/AElGioushy","https://www.linkedin.com/in/ahmed-elgioushy-8471661b8"],"knowsAbout":["Law","Logistics","Arbitration","Governance","Digital Transformation"]}
   </script>
   <style>
-    :root{--gold:#C6A96B;--gold-strong:#E4C77C;--bg:#0B0B0C;--panel:#111318;--muted:#94A3B8}
+    :root{--gold:#C6A96B;--gold-strong:#E4C77C;--bg:#0B0B0C;--panel:#111318;--muted:#94A3B8;--nav-height:86px}
     *{box-sizing:border-box}
+    html{scroll-padding-top:calc(var(--nav-height) + 18px)}
     body{font-family:Inter,sans-serif;background:radial-gradient(circle at 15% 10%,rgba(198,169,107,.12),transparent 30%),linear-gradient(180deg,#0b0b0c,#060607 60%,#0b0b0c);color:#fff;overflow-x:hidden}
+    section[id]{scroll-margin-top:calc(var(--nav-height) + 22px)}
     a{transition:.25s ease}.heading{font-family:'Playfair Display',serif}.gold{color:var(--gold)}
     .glass{background:rgba(17,19,24,.72);backdrop-filter:blur(18px);border:1px solid rgba(198,169,107,.14);box-shadow:0 24px 80px rgba(0,0,0,.22)}
     .section-padding{padding:110px 24px}.brand-logo{width:54px;height:54px;border-radius:50%;object-fit:cover}.reveal{opacity:0;transform:translateY(34px);transition:.8s ease}.reveal.active{opacity:1;transform:none}
-    .nav-link{font-size:.82rem;color:#cbd5e1}.nav-link:hover{color:var(--gold)}.premium-nav{background:rgba(9,10,12,.72);backdrop-filter:blur(20px);border-bottom:1px solid rgba(198,169,107,.12)}
-    .lang-btn{background:var(--gold);color:#000;padding:10px 16px;border-radius:999px;font-weight:800;font-size:.82rem}.menu-btn{display:none;color:#fff;font-size:1.35rem}.mobile-menu{display:none}.mobile-menu.open{display:grid}
+    .premium-nav{background:rgba(9,10,12,.42);backdrop-filter:blur(18px);border-bottom:1px solid rgba(198,169,107,.1);transition:background .35s ease,border-color .35s ease,box-shadow .35s ease,transform .35s ease}
+    .premium-nav.nav-scrolled{background:rgba(9,10,12,.84);border-color:rgba(198,169,107,.18);box-shadow:0 18px 60px rgba(0,0,0,.32)}
+    .nav-link{position:relative;display:inline-flex;align-items:center;min-height:38px;border-radius:999px;padding:0 10px;font-size:.76rem;font-weight:700;letter-spacing:.02em;color:#cbd5e1;white-space:nowrap;transition:color .25s ease,background .25s ease,transform .25s ease}
+    .nav-link:hover,.nav-link.active{color:var(--gold);background:rgba(198,169,107,.08);transform:translateY(-1px)}
+    .nav-link:focus-visible,.lang-btn:focus-visible,.menu-btn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    .nav-link:after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transform:scaleX(.35);transition:opacity .25s ease,transform .25s ease}
+    .nav-link:hover:after,.nav-link.active:after{opacity:1;transform:scaleX(1)}
+    .lang-btn{background:var(--gold);color:#000;padding:10px 16px;border-radius:999px;font-weight:800;font-size:.82rem;transition:transform .25s ease,box-shadow .25s ease}.lang-btn:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(198,169,107,.22)}
+    .menu-btn{display:none;color:#fff;width:42px;height:42px;border-radius:50%;border:1px solid rgba(198,169,107,.18);background:rgba(255,255,255,.04);font-size:1.1rem;transition:.25s ease}.menu-btn[aria-expanded="true"]{color:#000;background:var(--gold)}
+    .mobile-menu{display:none}.mobile-menu.open{display:grid;animation:navDrop .24s ease both}@keyframes navDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
     .lux-card{position:relative;overflow:hidden}.lux-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(198,169,107,.16),transparent 36%);opacity:.75;pointer-events:none}.cert-image{cursor:zoom-in;transition:.35s ease}.cert-image:hover{transform:scale(1.04)}
     .certificate-modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:99999;padding:24px}.certificate-modal img{max-width:92%;max-height:88vh;border-radius:24px;border:1px solid rgba(198,169,107,.35)}
     .timeline-line{position:absolute;left:50%;top:0;width:2px;height:100%;background:linear-gradient(var(--gold),rgba(198,169,107,.08))}.timeline-dot{width:18px;height:18px;background:var(--gold);border-radius:50%;position:absolute;left:calc(50% - 9px);box-shadow:0 0 32px rgba(198,169,107,.8)}
     .form-field{width:100%;border:1px solid rgba(198,169,107,.18);background:rgba(255,255,255,.04);border-radius:18px;padding:14px 16px;color:#fff;outline:none}.form-field:focus{border-color:var(--gold)}
-    @media(max-width:900px){.desktop-nav{display:none}.menu-btn{display:block}.mobile-menu{position:absolute;left:20px;right:20px;top:86px;gap:14px;padding:20px;border-radius:22px;background:rgba(9,10,12,.96);border:1px solid rgba(198,169,107,.15)}.section-padding{padding:85px 20px}h1{font-size:3.15rem!important}.timeline-line,.timeline-dot{display:none}}
+    [dir="rtl"] .nav-link{letter-spacing:0}[dir="rtl"] .nav-link:after{left:14px;right:14px}
+    @media(max-width:1180px){:root{--nav-height:78px}.desktop-nav{display:none}.menu-btn{display:inline-flex;align-items:center;justify-content:center}.mobile-menu{position:absolute;left:20px;right:20px;top:78px;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:16px;border-radius:22px;background:rgba(9,10,12,.96);border:1px solid rgba(198,169,107,.18);box-shadow:0 24px 80px rgba(0,0,0,.34)}.mobile-menu .nav-link{min-height:42px;justify-content:center;background:rgba(255,255,255,.035)}}
+    @media(max-width:640px){.section-padding{padding:92px 20px}h1{font-size:3.15rem!important}.timeline-line,.timeline-dot{display:none}.brand-logo{width:46px;height:46px}.mobile-menu{grid-template-columns:1fr;top:74px}.premium-nav .text-xs.text-slate-400{display:none}}
   </style>
 </head>
 <body>
@@ -46,12 +58,12 @@
         <img src="logo.png" class="brand-logo" alt="AEG logo">
         <div><div class="gold tracking-[0.35em] text-xs">AEG</div><p class="font-semibold leading-tight">Ahmed ElGioushy</p><p class="text-xs text-slate-400">Law | Logistics | Digital Transformation</p></div>
       </a>
-      <nav class="desktop-nav flex items-center gap-6" aria-label="Main navigation">
-        <a class="nav-link" href="#about" data-i18n="navAbout">About</a><a class="nav-link" href="#education" data-i18n="navEducation">Education</a><a class="nav-link" href="#research" data-i18n="navResearch">Research</a><a class="nav-link" href="#certificates" data-i18n="navCertificates">Certificates</a><a class="nav-link" href="#contact" data-i18n="navContact">Contact</a>
+      <nav class="desktop-nav flex items-center gap-1 xl:gap-2" aria-label="Main navigation">
+        <a class="nav-link" href="#hero" data-section="hero">Home</a><a class="nav-link" href="#education" data-section="education" data-i18n="navEducation">Education</a><a class="nav-link" href="#thesis" data-section="thesis" data-i18n="thesisTitle">Thesis</a><a class="nav-link" href="#volunteer" data-section="volunteer" data-i18n="volunteerTitle">Volunteer</a><a class="nav-link" href="#governance" data-section="governance" data-i18n="governanceTitle">Governance</a><a class="nav-link" href="#cairoict" data-section="cairoict" data-i18n="cairoTitle">CairoICT</a><a class="nav-link" href="#certificates" data-section="certificates" data-i18n="navCertificates">Certificates</a><a class="nav-link" href="#languages" data-section="languages" data-i18n="languagesTitle">Languages</a><a class="nav-link" href="#contact" data-section="contact" data-i18n="navContact">Contact</a>
       </nav>
       <div class="flex items-center gap-3"><button class="lang-btn" type="button">AR</button><button class="menu-btn" type="button" aria-expanded="false" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button></div>
       <nav class="mobile-menu" aria-label="Mobile navigation">
-        <a class="nav-link" href="#about" data-i18n="navAbout">About</a><a class="nav-link" href="#education" data-i18n="navEducation">Education</a><a class="nav-link" href="#research" data-i18n="navResearch">Research</a><a class="nav-link" href="#certificates" data-i18n="navCertificates">Certificates</a><a class="nav-link" href="#contact" data-i18n="navContact">Contact</a>
+        <a class="nav-link" href="#hero" data-section="hero">Home</a><a class="nav-link" href="#education" data-section="education" data-i18n="navEducation">Education</a><a class="nav-link" href="#thesis" data-section="thesis" data-i18n="thesisTitle">Thesis</a><a class="nav-link" href="#volunteer" data-section="volunteer" data-i18n="volunteerTitle">Volunteer</a><a class="nav-link" href="#governance" data-section="governance" data-i18n="governanceTitle">Governance</a><a class="nav-link" href="#cairoict" data-section="cairoict" data-i18n="cairoTitle">CairoICT</a><a class="nav-link" href="#certificates" data-section="certificates" data-i18n="navCertificates">Certificates</a><a class="nav-link" href="#languages" data-section="languages" data-i18n="languagesTitle">Languages</a><a class="nav-link" href="#contact" data-section="contact" data-i18n="navContact">Contact</a>
       </nav>
     </div>
   </header>
@@ -73,17 +85,17 @@
 
     <section id="education" class="section-padding bg-black/20 reveal"><div class="max-w-7xl mx-auto"><h2 class="heading text-5xl mb-16 text-center" data-i18n="educationTitle">Education</h2><div class="grid lg:grid-cols-2 gap-8"><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="eduOneTitle">Pharos University</h3><p class="text-slate-300" data-i18n="eduOneText">Legal Studies & International Relations.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="eduTwoTitle">AASTMT</h3><p class="text-slate-300" data-i18n="eduTwoText">Master Degree in International Transactions & Logistics.</p></article></div></div></section>
 
-    <section class="section-padding reveal"><div class="max-w-6xl mx-auto glass lux-card p-12 rounded-[32px]"><h2 class="heading text-5xl mb-8" data-i18n="thesisTitle">Master Thesis</h2><h3 class="gold text-3xl mb-6" data-i18n="thesisName">Judicial Control over Arbitral Awards</h3><p class="text-slate-300 leading-8" data-i18n="thesisText">Focused on arbitration systems, legal oversight mechanisms, and the relationship between institutional authority and enforceable awards.</p></div></section>
+    <section id="thesis" class="section-padding reveal"><div class="max-w-6xl mx-auto glass lux-card p-12 rounded-[32px]"><h2 class="heading text-5xl mb-8" data-i18n="thesisTitle">Master Thesis</h2><h3 class="gold text-3xl mb-6" data-i18n="thesisName">Judicial Control over Arbitral Awards</h3><p class="text-slate-300 leading-8" data-i18n="thesisText">Focused on arbitration systems, legal oversight mechanisms, and the relationship between institutional authority and enforceable awards.</p></div></section>
 
-    <section class="section-padding bg-black/20 reveal"><div class="max-w-7xl mx-auto"><h2 class="heading text-5xl text-center mb-16" data-i18n="volunteerTitle">Volunteer & Community Work</h2><div class="grid lg:grid-cols-3 gap-8"><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="volunteerOne">ESE Activities</h3><p class="text-slate-300" data-i18n="volunteerOneText">Sustainability and youth engagement initiatives.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="volunteerTwo">AI Ambassador</h3><p class="text-slate-300" data-i18n="volunteerTwoText">AI awareness and volunteer coordination programs.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="volunteerThree">Community Engagement</h3><p class="text-slate-300" data-i18n="volunteerThreeText">Academic networking and development activities.</p></article></div></div></section>
+    <section id="volunteer" class="section-padding bg-black/20 reveal"><div class="max-w-7xl mx-auto"><h2 class="heading text-5xl text-center mb-16" data-i18n="volunteerTitle">Volunteer & Community Work</h2><div class="grid lg:grid-cols-3 gap-8"><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="volunteerOne">ESE Activities</h3><p class="text-slate-300" data-i18n="volunteerOneText">Sustainability and youth engagement initiatives.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="volunteerTwo">AI Ambassador</h3><p class="text-slate-300" data-i18n="volunteerTwoText">AI awareness and volunteer coordination programs.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="volunteerThree">Community Engagement</h3><p class="text-slate-300" data-i18n="volunteerThreeText">Academic networking and development activities.</p></article></div></div></section>
 
-    <section class="section-padding reveal"><div class="max-w-7xl mx-auto"><h2 class="heading text-5xl text-center mb-16" data-i18n="governanceTitle">Governance & Digital Transformation</h2><div class="grid lg:grid-cols-2 gap-8"><article class="glass p-12 rounded-3xl"><h3 class="gold text-3xl mb-6" data-i18n="governanceOne">Digital Transformation Ambassador</h3><p class="text-slate-300" data-i18n="governanceOneText">Digital modernization and awareness programs.</p></article><article class="glass p-12 rounded-3xl"><h3 class="gold text-3xl mb-6" data-i18n="governanceTwo">Governance Ambassador</h3><p class="text-slate-300" data-i18n="governanceTwoText">Transparency and institutional governance initiatives.</p></article></div></div></section>
+    <section id="governance" class="section-padding reveal"><div class="max-w-7xl mx-auto"><h2 class="heading text-5xl text-center mb-16" data-i18n="governanceTitle">Governance & Digital Transformation</h2><div class="grid lg:grid-cols-2 gap-8"><article class="glass p-12 rounded-3xl"><h3 class="gold text-3xl mb-6" data-i18n="governanceOne">Digital Transformation Ambassador</h3><p class="text-slate-300" data-i18n="governanceOneText">Digital modernization and awareness programs.</p></article><article class="glass p-12 rounded-3xl"><h3 class="gold text-3xl mb-6" data-i18n="governanceTwo">Governance Ambassador</h3><p class="text-slate-300" data-i18n="governanceTwoText">Transparency and institutional governance initiatives.</p></article></div></div></section>
 
-    <section class="section-padding bg-black/20 reveal"><div class="max-w-7xl mx-auto"><h2 class="heading text-5xl text-center mb-16" data-i18n="cairoTitle">CairoICT Experience</h2><div class="grid lg:grid-cols-3 gap-8"><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="cairoOne">Technology Networking</h3><p class="text-slate-300" data-i18n="cairoOneText">Networking with institutions and technology leaders.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="cairoTwo">Innovation Exposure</h3><p class="text-slate-300" data-i18n="cairoTwoText">Digital governance and smart transformation insights.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="cairoThree">Executive Exposure</h3><p class="text-slate-300" data-i18n="cairoThreeText">Innovation policy and future systems understanding.</p></article></div></div></section>
+    <section id="cairoict" class="section-padding bg-black/20 reveal"><div class="max-w-7xl mx-auto"><h2 class="heading text-5xl text-center mb-16" data-i18n="cairoTitle">CairoICT Experience</h2><div class="grid lg:grid-cols-3 gap-8"><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="cairoOne">Technology Networking</h3><p class="text-slate-300" data-i18n="cairoOneText">Networking with institutions and technology leaders.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="cairoTwo">Innovation Exposure</h3><p class="text-slate-300" data-i18n="cairoTwoText">Digital governance and smart transformation insights.</p></article><article class="glass p-10 rounded-3xl"><h3 class="gold text-2xl mb-4" data-i18n="cairoThree">Executive Exposure</h3><p class="text-slate-300" data-i18n="cairoThreeText">Innovation policy and future systems understanding.</p></article></div></div></section>
 
     <section id="certificates" class="section-padding reveal"><div class="max-w-7xl mx-auto"><h2 class="heading text-5xl text-center mb-16" data-i18n="certificatesTitle">Certificates</h2><div class="grid md:grid-cols-3 gap-8"><article class="glass rounded-3xl overflow-hidden"><img src="master-cert.jpg" class="w-full h-[320px] object-cover cert-image" alt="Master certificate"><div class="p-6"><h3 class="gold text-xl" data-i18n="certOne">Master Certificate</h3></div></article><article class="glass rounded-3xl overflow-hidden"><img src="ai-basic.jpg" class="w-full h-[320px] object-cover cert-image" alt="AI Ambassador Basic certificate"><div class="p-6"><h3 class="gold text-xl" data-i18n="certTwo">AI Ambassador Basic</h3></div></article><article class="glass rounded-3xl overflow-hidden"><img src="ai-advanced.jpg" class="w-full h-[320px] object-cover cert-image" alt="AI Ambassador Advanced certificate"><div class="p-6"><h3 class="gold text-xl" data-i18n="certThree">AI Ambassador Advanced</h3></div></article></div></div></section>
 
-    <section class="section-padding bg-black/20 reveal"><div class="max-w-7xl mx-auto text-center"><h2 class="heading text-5xl mb-12" data-i18n="languagesTitle">Languages</h2><div class="grid md:grid-cols-4 gap-6"><div class="glass p-6 rounded-2xl" data-i18n="langArabic">Arabic - Native</div><div class="glass p-6 rounded-2xl" data-i18n="langEnglish">English - Professional</div><div class="glass p-6 rounded-2xl" data-i18n="langFrench">French - Learning</div><div class="glass p-6 rounded-2xl" data-i18n="langGerman">German - Beginner</div></div></div></section>
+    <section id="languages" class="section-padding bg-black/20 reveal"><div class="max-w-7xl mx-auto text-center"><h2 class="heading text-5xl mb-12" data-i18n="languagesTitle">Languages</h2><div class="grid md:grid-cols-4 gap-6"><div class="glass p-6 rounded-2xl" data-i18n="langArabic">Arabic - Native</div><div class="glass p-6 rounded-2xl" data-i18n="langEnglish">English - Professional</div><div class="glass p-6 rounded-2xl" data-i18n="langFrench">French - Learning</div><div class="glass p-6 rounded-2xl" data-i18n="langGerman">German - Beginner</div></div></div></section>
 
     <section id="timeline" class="section-padding reveal"><div class="max-w-7xl mx-auto text-center mb-20"><h2 class="heading text-5xl mb-6" data-i18n="timelineTitle">Executive Timeline</h2><p class="text-slate-400 text-lg" data-i18n="timelineIntro">Academic, ambassadorial, and professional development journey.</p></div><div class="max-w-6xl mx-auto relative"><div class="timeline-line"></div><div class="space-y-16"><article class="relative grid lg:grid-cols-2 gap-10 items-center"><div class="glass p-10 rounded-3xl"><div class="gold text-sm mb-3">2022 - Present</div><h3 class="text-3xl mb-4" data-i18n="timeOne">Governance & Digital Transformation Ambassador</h3><p class="text-slate-300" data-i18n="timeOneText">Participated in ambassadorial initiatives focused on governance modernization and digital transformation awareness.</p></div><div></div><div class="timeline-dot top-12"></div></article><article class="relative grid lg:grid-cols-2 gap-10 items-center"><div></div><div class="glass p-10 rounded-3xl"><div class="gold text-sm mb-3">2023</div><h3 class="text-3xl mb-4" data-i18n="timeTwo">CairoICT Participation</h3><p class="text-slate-300" data-i18n="timeTwoText">Expanded professional exposure to innovation ecosystems, executive networking, and emerging technology environments.</p></div><div class="timeline-dot top-12"></div></article><article class="relative grid lg:grid-cols-2 gap-10 items-center"><div class="glass p-10 rounded-3xl"><div class="gold text-sm mb-3">2024</div><h3 class="text-3xl mb-4" data-i18n="timeThree">Master Degree Completion</h3><p class="text-slate-300" data-i18n="timeThreeText">Completed postgraduate studies in International Transactions and Logistics at AASTMT.</p></div><div></div><div class="timeline-dot top-12"></div></article></div></div></section>
 
@@ -98,12 +110,46 @@
 
   <script src="language-toggle.js"></script>
   <script>
+    const premiumNav = document.querySelector('.premium-nav');
+    const navLinks = document.querySelectorAll('.nav-link[data-section]');
+    const navSections = Array.from(navLinks)
+      .map((link) => document.getElementById(link.dataset.section))
+      .filter(Boolean);
+
+    function updateNavSurface() {
+      if (!premiumNav) return;
+      premiumNav.classList.toggle('nav-scrolled', window.scrollY > 18);
+    }
+
+    function setActiveNav(sectionId) {
+      navLinks.forEach((link) => {
+        const isActive = link.dataset.section === sectionId;
+        link.classList.toggle('active', isActive);
+        if (isActive) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+    }
+
     document.querySelectorAll('.reveal').forEach((el) => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('active'); });
       }, { threshold: 0.12 });
       observer.observe(el);
     });
+
+    if (navSections.length) {
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) setActiveNav(entry.target.id); });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0.01 });
+      navSections.forEach((section) => navObserver.observe(section));
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => setActiveNav(link.dataset.section));
+    });
+
+    updateNavSurface();
+    window.addEventListener('scroll', updateNavSurface, { passive: true });
 
     const modal = document.getElementById('certificateModal');
     const modalImg = document.getElementById('modalImage');

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       timelineTitle: 'Executive Timeline', timelineIntro: 'Academic, ambassadorial, and professional development journey.', timeOne: 'Governance & Digital Transformation Ambassador', timeOneText: 'Participated in ambassadorial initiatives focused on governance modernization and digital transformation awareness.', timeTwo: 'CairoICT Participation', timeTwoText: 'Expanded professional exposure to innovation ecosystems, executive networking, and emerging technology environments.', timeThree: 'Master Degree Completion', timeThreeText: 'Completed postgraduate studies in International Transactions and Logistics at AASTMT.',
       researchTitle: 'Research & Publications', researchIntro: 'Research interests connecting international transactions, logistics systems, arbitration, governance, and responsible technology adoption.', researchOne: 'Arbitration & Judicial Control', researchOneText: 'Study of court oversight, enforceability, and procedural safeguards around arbitral awards.', researchTwo: 'Digital Governance', researchTwoText: 'Exploration of public-sector modernization, transparency, and technology-enabled institutional development.', researchThree: 'Logistics & International Transactions', researchThreeText: 'Academic focus on cross-border transactions, maritime/logistics systems, and commercial coordination.',
       githubTitle: 'GitHub Activity', githubIntro: 'Live public GitHub profile widgets for technical presence and project visibility.', githubProfile: 'Open GitHub Profile',
-      contactTitle: 'Contact Me', contactLocation: 'Cairo, Egypt', contactPrompt: 'Send a professional message or connect through GitHub and LinkedIn.', formName: 'Your name', formEmail: 'Your email', formMessage: 'Your message', formSubmit: 'Send Message', footerText: '2026 Ahmed ElGioushy. Built for GitHub Pages.'
+      contactTitle: 'Contact Me', contactLocation: 'Cairo, Egypt', contactPrompt: 'Send a professional message or connect through GitHub and LinkedIn.', formName: 'Your name', formEmail: 'Your email', formSubject: 'Subject', formMessage: 'Your message', formSubmit: 'Send Message', footerText: '2026 Ahmed ElGioushy. Built for GitHub Pages.'
     },
     ar: {
       navAbout: 'نبذة', navEducation: 'التعليم', navResearch: 'الأبحاث', navCertificates: 'الشهادات', navContact: 'التواصل',
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       timelineTitle: 'المسار التنفيذي', timelineIntro: 'رحلة التطور الأكاديمي والمهني وبرامج السفراء.', timeOne: 'سفير الحوكمة والتحول الرقمي', timeOneText: 'المشاركة في مبادرات سفراء تركز على تحديث الحوكمة والتوعية بالتحول الرقمي.', timeTwo: 'المشاركة في CairoICT', timeTwoText: 'توسيع الخبرة المهنية في بيئات الابتكار والتواصل التنفيذي والتكنولوجيا الناشئة.', timeThree: 'إتمام درجة الماجستير', timeThreeText: 'إتمام الدراسات العليا في المعاملات الدولية واللوجستيات بالأكاديمية العربية.',
       researchTitle: 'الأبحاث والمنشورات', researchIntro: 'اهتمامات بحثية تربط بين المعاملات الدولية واللوجستيات والتحكيم والحوكمة وتبني التكنولوجيا المسؤول.', researchOne: 'التحكيم والرقابة القضائية', researchOneText: 'دراسة رقابة المحاكم وقابلية التنفيذ والضمانات الإجرائية المرتبطة بأحكام التحكيم.', researchTwo: 'الحوكمة الرقمية', researchTwoText: 'استكشاف تحديث القطاع العام والشفافية والتطوير المؤسسي المدعوم بالتكنولوجيا.', researchThree: 'اللوجستيات والمعاملات الدولية', researchThreeText: 'تركيز أكاديمي على المعاملات العابرة للحدود وأنظمة النقل واللوجستيات والتنسيق التجاري.',
       githubTitle: 'نشاط GitHub', githubIntro: 'عناصر مباشرة من ملف GitHub العام لإظهار الحضور التقني والمشروعات.', githubProfile: 'فتح ملف GitHub',
-      contactTitle: 'تواصل معي', contactLocation: 'القاهرة، مصر', contactPrompt: 'أرسل رسالة مهنية أو تواصل عبر GitHub و LinkedIn.', formName: 'اسمك', formEmail: 'بريدك الإلكتروني', formMessage: 'رسالتك', formSubmit: 'إرسال الرسالة', footerText: '2026 أحمد الجيوشي. مبني لـ GitHub Pages.'
+      contactTitle: 'تواصل معي', contactLocation: 'القاهرة، مصر', contactPrompt: 'أرسل رسالة مهنية أو تواصل عبر GitHub و LinkedIn.', formName: 'اسمك', formEmail: 'بريدك الإلكتروني', formSubject: 'موضوع الرسالة', formMessage: 'رسالتك', formSubmit: 'إرسال الرسالة', footerText: '2026 أحمد الجيوشي. مبني لـ GitHub Pages.'
     }
   };
 
@@ -397,6 +397,133 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function enhanceContactBackend() {
+    const contactForm = document.querySelector('#contact form');
+    if (!contactForm || contactForm.dataset.contactEnhanced === 'true') return;
+    contactForm.dataset.contactEnhanced = 'true';
+    contactForm.classList.add('premium-contact-form');
+    contactForm.setAttribute('novalidate', '');
+
+    if (!document.getElementById('premium-contact-system-styles')) {
+      const style = document.createElement('style');
+      style.id = 'premium-contact-system-styles';
+      style.textContent = `
+        .premium-contact-form{position:relative;overflow:hidden;border:1px solid rgba(198,169,107,.18)!important}.premium-contact-form:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(198,169,107,.11),transparent 42%);pointer-events:none}.premium-contact-form>*{position:relative}.premium-contact-form .form-field{min-height:54px;transition:border-color .25s ease,box-shadow .25s ease,background .25s ease,transform .25s ease}.premium-contact-form .form-field:hover{border-color:rgba(198,169,107,.34);background:rgba(255,255,255,.055)}.premium-contact-form .form-field:focus{box-shadow:0 0 0 4px rgba(198,169,107,.1);transform:translateY(-1px)}.contact-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}.contact-status{min-height:54px;border-radius:18px;border:1px solid rgba(198,169,107,.14);background:rgba(255,255,255,.035);color:#cbd5e1;padding:14px 16px;line-height:1.6;display:none}.contact-status.show{display:flex;align-items:center;gap:10px;animation:contactRise .32s ease both}.contact-status.success{border-color:rgba(74,222,128,.34);background:rgba(74,222,128,.08);color:#d7ffe2}.contact-status.error{border-color:rgba(248,113,113,.34);background:rgba(248,113,113,.08);color:#ffe1e1}.contact-status.info{border-color:rgba(198,169,107,.28);background:rgba(198,169,107,.08);color:#f1dfaa}.contact-submit{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;transition:transform .25s ease,box-shadow .25s ease,opacity .25s ease}.contact-submit:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 16px 38px rgba(198,169,107,.22)}.contact-submit:disabled{cursor:not-allowed;opacity:.72}.contact-submit.loading:before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid rgba(0,0,0,.25);border-top-color:#000;animation:contactSpin .8s linear infinite}.premium-contact-form.was-sent{animation:contactGlow .75s ease both}@keyframes contactSpin{to{transform:rotate(360deg)}}@keyframes contactRise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes contactGlow{0%{box-shadow:0 0 0 rgba(198,169,107,0)}45%{box-shadow:0 0 0 6px rgba(198,169,107,.08),0 30px 90px rgba(74,222,128,.12)}100%{box-shadow:0 24px 80px rgba(0,0,0,.22)}}html[lang="ar"] .premium-contact-form{text-align:right}html[lang="ar"] .contact-status{justify-content:flex-end}@media(max-width:640px){.premium-contact-form{padding:24px!important}.contact-submit{width:100%}.contact-status{font-size:.92rem}}
+      `;
+      document.head.appendChild(style);
+    }
+
+    const emailField = contactForm.querySelector('input[name="email"]');
+    const messageField = contactForm.querySelector('textarea[name="message"]');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const hiddenSubject = contactForm.querySelector('input[name="_subject"]');
+    const startedAt = Date.now();
+
+    if (emailField && !contactForm.querySelector('input[name="subject"]')) {
+      emailField.insertAdjacentHTML('afterend', '<input class="form-field" required name="subject" autocomplete="off" data-i18n-placeholder="formSubject" placeholder="Subject" maxlength="120">');
+    }
+
+    if (!contactForm.querySelector('input[name="_honey"]')) {
+      contactForm.insertAdjacentHTML('beforeend', '<input class="contact-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">');
+    }
+
+    if (!contactForm.querySelector('.contact-status')) {
+      contactForm.insertAdjacentHTML('beforeend', '<div class="contact-status" role="status" aria-live="polite"></div>');
+    }
+
+    const nameField = contactForm.querySelector('input[name="name"]');
+    const subjectField = contactForm.querySelector('input[name="subject"]');
+    const honeyField = contactForm.querySelector('input[name="_honey"]');
+    const statusBox = contactForm.querySelector('.contact-status');
+
+    if (submitButton) {
+      submitButton.classList.add('contact-submit');
+    }
+
+    function isArabic() {
+      return document.documentElement.lang === 'ar';
+    }
+
+    function copy(en, ar) {
+      return isArabic() ? ar : en;
+    }
+
+    function setStatus(type, message) {
+      if (!statusBox) return;
+      const icon = type === 'success' ? 'fa-circle-check' : type === 'error' ? 'fa-triangle-exclamation' : 'fa-paper-plane';
+      statusBox.className = `contact-status show ${type}`;
+      statusBox.innerHTML = `<i class="fa-solid ${icon}" aria-hidden="true"></i><span>${message}</span>`;
+    }
+
+    function setLoading(isLoading) {
+      if (!submitButton) return;
+      submitButton.disabled = isLoading;
+      submitButton.classList.toggle('loading', isLoading);
+      submitButton.textContent = isLoading ? copy('Sending...', 'جاري الإرسال...') : copy('Send Message', 'إرسال الرسالة');
+    }
+
+    function validateForm() {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!nameField?.value.trim() || nameField.value.trim().length < 2) return copy('Please enter your full name.', 'من فضلك أدخل اسمك الكامل.');
+      if (!emailField?.value.trim() || !emailPattern.test(emailField.value.trim())) return copy('Please enter a valid email address.', 'من فضلك أدخل بريدًا إلكترونيًا صحيحًا.');
+      if (!subjectField?.value.trim() || subjectField.value.trim().length < 3) return copy('Please enter a clear subject.', 'من فضلك أدخل موضوعًا واضحًا.');
+      if (!messageField?.value.trim() || messageField.value.trim().length < 10) return copy('Please write a message of at least 10 characters.', 'من فضلك اكتب رسالة لا تقل عن 10 أحرف.');
+      return '';
+    }
+
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const validationError = validateForm();
+      if (validationError) {
+        setStatus('error', validationError);
+        return;
+      }
+
+      if (honeyField?.value) {
+        setStatus('error', copy('Submission blocked by spam protection.', 'تم حظر الإرسال بواسطة حماية الرسائل المزعجة.'));
+        return;
+      }
+
+      if (Date.now() - startedAt < 2500) {
+        setStatus('error', copy('Please wait a moment before sending.', 'من فضلك انتظر لحظة قبل الإرسال.'));
+        return;
+      }
+
+      const lastSubmit = Number(localStorage.getItem('portfolio-contact-last-submit') || 0);
+      if (Date.now() - lastSubmit < 30000) {
+        setStatus('info', copy('Your message was recently sent. Please wait before sending another one.', 'تم إرسال رسالة مؤخرًا. من فضلك انتظر قليلًا قبل إرسال رسالة أخرى.'));
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      if (hiddenSubject && subjectField) hiddenSubject.value = `Portfolio Contact: ${subjectField.value.trim()}`;
+      formData.set('_subject', hiddenSubject?.value || `Portfolio Contact: ${subjectField.value.trim()}`);
+      formData.set('_captcha', 'false');
+
+      setLoading(true);
+      setStatus('info', copy('Sending your message securely...', 'جاري إرسال رسالتك بأمان...'));
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: formData
+        });
+
+        if (!response.ok) throw new Error('Contact submission failed');
+        localStorage.setItem('portfolio-contact-last-submit', String(Date.now()));
+        contactForm.reset();
+        contactForm.classList.add('was-sent');
+        window.setTimeout(() => contactForm.classList.remove('was-sent'), 900);
+        setStatus('success', copy('Message sent successfully. Thank you for reaching out.', 'تم إرسال الرسالة بنجاح. شكرًا لتواصلك.'));
+      } catch (error) {
+        setStatus('error', copy('The message could not be sent right now. Please try again or email directly.', 'تعذر إرسال الرسالة الآن. من فضلك حاول مرة أخرى أو استخدم البريد مباشرة.'));
+      } finally {
+        setLoading(false);
+      }
+    });
+  }
+
   if (langBtn) {
     langBtn.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'ar' : 'en';
@@ -421,5 +548,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   enhanceResearchPublications();
   enhanceCaseStudies();
+  enhanceContactBackend();
   applyLanguage();
 });
